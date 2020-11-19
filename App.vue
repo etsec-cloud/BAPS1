@@ -1,8 +1,21 @@
 <template>
   <view class="container">
-    <text class="text-color-primary">My Vue Native App</text>
+    <connexion></connexion>
   </view>
 </template>
+
+<script>
+
+import connexion from './components/connexion.vue';
+
+export default {
+  name: 'App',
+  components: {
+    connexion
+  }
+}
+
+</script>
 
 <style>
 .container {
@@ -11,7 +24,5 @@
   justify-content: center;
   flex: 1;
 }
-.text-color-primary {
-  color: blue;
-}
+
 </style>
