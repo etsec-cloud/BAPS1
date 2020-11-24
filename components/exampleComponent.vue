@@ -1,4 +1,6 @@
-<template> </template>
+<template>
+  <text>Ceci est la page example </text>
+</template>
 
 <script>
 export default {
