@@ -1,6 +1,9 @@
 <template>
   <view class="page">
     <view class="form">
+
+      <image class="logo" :source="require('../assets/logoBAP.png')" />
+
       <text class="h1">LOREM IPSUM</text>
       <text class="under_h1"
         >Lorem ipsum dolor sit amet, consectetur adipiscin elit , sed do eiusmod
@@ -25,10 +28,14 @@ export default {
       text: ""
     };
   }
+
 };
 </script>
 
 <style scoped>
+*{
+  box-sizing: border-box;
+}
 .page {
   width: 100%;
   background-color: #ececec;
@@ -38,6 +45,14 @@ export default {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.logo{
+  margin-left: auto;
+  margin-right: auto;
+  width: 260px;
+  height: 260px;
+  margin-bottom: 50px;
 }
 
 .h1 {
