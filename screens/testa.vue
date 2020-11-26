@@ -1,18 +1,8 @@
 <template>
   <view class="page">
     <view class="form">
-      <text class="h1">LOREM IPSUM</text>
-      <text class="under_h1"
-        >Lorem ipsum dolor sit amet, consectetur adipiscin elit , sed do eiusmod
-        tempor</text
-      >
-      <text-input class="input" placeholder="Votre mail" v-model="text" />
-      <text-input
-        class="input"
-        placeholder="Entrez votre mot de passe"
-        v-model="text"
-      />
-      <text class="mdp_lost">Mot de passe oublié</text>
+      <text class="h1">testaa</text>
+      <text class="under_h1">le test du navigateur</text>
     </view>
     <view class="bottom"> </view>
   </view>
@@ -63,8 +53,5 @@ export default {
   margin-top: 5%;
   font-size: 11px;
   text-align: center;
-}
-.nav {
-  background-color: red;
 }
 </style>
