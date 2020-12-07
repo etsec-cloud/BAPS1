@@ -3,18 +3,42 @@
 </template>
 
 <script>
-import { createAppContainer } from "react-navigation";
-import { createStackNavigator } from "react-navigation-stack";
+import {
+  createAppContainer,
+  createMaterialTopTabNavigator,
+  createStackNavigator,
+  createBottomTabNavigator
+} from "vue-native-router";
 
-import AppNavbar from "./components/AppNavbar.vue";
 import connexion from "./screens/connexion.vue";
 import testa from "./screens/testa.vue";
-
-const StackNavigator = createStackNavigator({
-  Home: connexion,
-  Test: testa
+import Home from "./screens/Home.vue";
+const BottomTabNavigator = createBottomTabNavigator({
+  Home: Home,
+  Connexion: connexion,
+  Page: testa
 });
 
+const AndroidTabs = createMaterialTopTabNavigator({
+  Home: Home,
+  Connexion: connexion,
+  Page: testa
+});
+const StackNavigator = createStackNavigator(
+  {
+    Home: Home,
+    AndroidTabs: AndroidTabs,
+    IOSTabs: BottomTabNavigator
+  },
+  {
+    initialRouteName: "Home",
+    defaultNavigationOptions: {
+      headerStyle: {
+        display: "none"
+      }
+    }
+  }
+);
 const AppNavigator = createAppContainer(StackNavigator);
 export default {
   components: { AppNavigator }

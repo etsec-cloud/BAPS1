@@ -1,8 +1,8 @@
 <template>
   <view class="page">
     <view class="form">
-      <text class="h1">testaa</text>
-      <text class="under_h1">le test du navigateur</text>
+      <text class="h1">Page 2</text>
+      <text class="under_h1">La page 2 fonctionne !</text>
     </view>
     <view class="bottom"> </view>
   </view>

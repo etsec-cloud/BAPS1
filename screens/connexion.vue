@@ -20,10 +20,20 @@
 
 <script>
 export default {
+  props: {
+    navigation: {
+      type: Object
+    }
+  },
   data: function() {
     return {
       text: ""
     };
+  },
+  methods: {
+    goToTestScreen() {
+      this.navigation.navigate("Page");
+    }
   }
 };
 </script>
@@ -48,6 +58,12 @@ export default {
 .under_h1 {
   font-size: 16px;
   text-align: center;
+}
+.bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .input {
