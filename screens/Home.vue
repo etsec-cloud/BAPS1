@@ -7,7 +7,12 @@
       >Hypnofine, Votre anti-douleur. Venez constater votre progression après
       une écoute . On commence ?</text
     >
-    <button title="start" @press="goToAndroidTabNavigator"></button>
+    <baseBouton text="Start" :on-press="action">
+      <!-- text="bouton.text"
+      :on-press="goToAndroidTabNavigator"
+    > -->
+    </baseBouton>
+    <button title="start" :on-press="action"></button>
   </view>
 </template>
 
@@ -23,7 +28,7 @@ export default {
     navigation: { type: Object }
   },
   methods: {
-    goToAndroidTabNavigator() {
+    action() {
       this.navigation.navigate("IOSTabs");
     }
   }

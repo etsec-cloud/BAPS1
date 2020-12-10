@@ -15,7 +15,7 @@ import Home from "./screens/Home.vue";
 
 const BottomTabNavigator = createBottomTabNavigator({
   Connexion: connexion,
-  Page: testa
+  Administration: testa
 });
 
 const StackNavigator = createStackNavigator(
