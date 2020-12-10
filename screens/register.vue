@@ -2,32 +2,30 @@
   <scroll-view :content-container-style="{contentContainer: {
         paddingVertical: 20
     }}">
-    <view class="page">
-      <view class="fond-form">
-        <view class="header">
-          <image class="profil" :source="require('../assets/img/profil.png')" />
-          <view class="arrow-left"></view>
-        </view>
+    <view class="page-register">
+      <view class="fond-form-register">
+        <view class="header-register">
 
-        <image class="logo" :source="require('../assets/img/logoBAP.png')" />
-        <view class="form">
-          <text class="h1">LOREM IPSUM</text>
-          <text class="under_h1"
-            >Lorem ipsum dolor sit amet, consectetur adipiscin elit , sed do
-            eiusmod tempor</text
-          >
+          <image class="logo-register" :source="require('../assets/img/logoBAP.png')" />
+        </view>
+        <view class="form-register">
           <text-input class="input" placeholder="Votre mail" v-model="text" />
           <text-input
-            class="input"
-            placeholder="Entrez votre mot de passe"
-            v-model="text"
+              class="input"
+              placeholder="Entrez votre mot de passe"
+              v-model="text"
           />
-          <text class="mdp_lost">Mot de passe oublié</text>
-          <button class="bttn" title="login" type="submit">Login</button>
+          <text-input
+              class="input"
+              placeholder="Confirmez votre mot de passe"
+              v-model="text"
+          />
+
+
         </view>
       </view>
 
-      <view class="bottom-connexion">
+      <view class="bottom-register">
         <BaseBouton></BaseBouton>
       </view>
     </view>
@@ -35,6 +33,7 @@
 </template>
 
 <script>
+
 import BaseBouton from "../components/base/baseBouton";
 
 export default {
@@ -61,24 +60,23 @@ export default {
 * {
   box-sizing: border-box;
 }
-.page {
+.page-register {
   width: 100%;
   background-color: #166180;
 }
 
-.fond-form {
+.fond-form-register {
   background-color: #fff7f2;
+  padding-bottom: 50px;
 }
 
-.form {
+.form-register {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
 }
-.profil {
-}
 
-.logo {
+.logo-register {
   margin-top: 30%;
   margin-left: auto;
   margin-right: auto;
@@ -87,21 +85,7 @@ export default {
   margin-bottom: 50px;
 }
 
-.h1,
-.under_h1 {
-}
-
-.h1 {
-  font-size: 30px;
-  text-align: center;
-  margin-bottom: 10%;
-  color: #616161;
-}
-.under_h1 {
-  font-size: 16px;
-  text-align: center;
-}
-.bottom {
+.bottom-register {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -119,15 +103,6 @@ export default {
   border-bottom-width: 1px;
 }
 
-.mdp_lost {
-  margin-top: 5%;
-  font-size: 12px;
-  text-align: center;
-  padding-bottom: 30px;
-}
-
-.bttn {
-}
 .nav {
   background-color: red;
 }
