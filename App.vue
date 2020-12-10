@@ -9,9 +9,10 @@ import { createStackNavigator } from "react-navigation-stack";
 import AppNavbar from "./components/AppNavbar.vue";
 import connexion from "./screens/connexion.vue";
 import testa from "./screens/testa.vue";
+import administration from './screens/administration.vue';
 
 const StackNavigator = createStackNavigator({
-  Home: connexion,
+  Home: administration,
   Test: testa
 });
 
