@@ -1,11 +1,10 @@
 <template>
-  <app-navigator></app-navigator>
+  <app-navigator> </app-navigator>
 </template>
 
 <script>
 import {
   createAppContainer,
-  createMaterialTopTabNavigator,
   createStackNavigator,
   createBottomTabNavigator
 } from "vue-native-router";
@@ -13,21 +12,15 @@ import {
 import connexion from "./screens/connexion.vue";
 import testa from "./screens/testa.vue";
 import Home from "./screens/Home.vue";
+
 const BottomTabNavigator = createBottomTabNavigator({
-  Home: Home,
   Connexion: connexion,
   Page: testa
 });
 
-const AndroidTabs = createMaterialTopTabNavigator({
-  Home: Home,
-  Connexion: connexion,
-  Page: testa
-});
 const StackNavigator = createStackNavigator(
   {
     Home: Home,
-    AndroidTabs: AndroidTabs,
     IOSTabs: BottomTabNavigator
   },
   {
@@ -39,8 +32,10 @@ const StackNavigator = createStackNavigator(
     }
   }
 );
+
 const AppNavigator = createAppContainer(StackNavigator);
 export default {
   components: { AppNavigator }
 };
 </script>
+<style></style>

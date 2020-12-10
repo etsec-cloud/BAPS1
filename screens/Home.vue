@@ -1,16 +1,24 @@
 <template>
-  <view class="page">
-    <view class="form">
-      <text class="h1">Home page</text>
-      <text class="under_h1">La Home fonctionne !</text>
-      <button title="Start" @press="goToAndroidTabNavigator"></button>
-    </view>
-    <view class="bottom"> </view>
+  <view class="flex-row-top">
+    <image :source="require('../assets/img/profil.png')" />
+    <image :source="require('../assets/img/logoBAP.png')" />
+
+    <text class=""
+      >Hypnofine, Votre anti-douleur. Venez constater votre progression après
+      une écoute . On commence ?</text
+    >
+    <button title="start" @press="goToAndroidTabNavigator"></button>
   </view>
 </template>
 
 <script>
+import Vue from "vue-native-core";
+import baseBouton from "../components/base/baseBouton";
+
 export default {
+  components: {
+    baseBouton
+  },
   props: {
     navigation: { type: Object }
   },
@@ -22,20 +30,10 @@ export default {
 };
 </script>
 
-<style scoped>
-.page {
-  width: 100%;
-  height: 90%;
-  background-color: #4d181873;
-}
-
-.h1 {
-  font-size: 25px;
-  text-align: center;
-  margin-bottom: 10%;
-}
-.under_h1 {
-  font-size: 16px;
-  text-align: center;
+<style>
+.flex-row-top {
+  margin-top: 20px;
+  display: flex;
+  background-color: red;
 }
 </style>

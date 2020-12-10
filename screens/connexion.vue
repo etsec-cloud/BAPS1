@@ -2,11 +2,11 @@
   <view class="page">
     <view class="fond-form">
       <view class="header">
-        <image class="profil" :source="require('../assets/profil.png')" />
+        <image class="profil" :source="require('../assets/img/profil.png')" />
         <view class="arrow-left"></view>
       </view>
 
-      <image class="logo" :source="require('../assets/logoBAP.png')" />
+      <image class="logo" :source="require('../assets/img/logoBAP.png')" />
       <view class="form">
         <text class="h1">LOREM IPSUM</text>
         <text class="under_h1"
