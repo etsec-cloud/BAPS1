@@ -1,23 +1,44 @@
 <template>
-  <app-navigator></app-navigator>
+  <app-navigator> </app-navigator>
 </template>
 
 <script>
-import { createAppContainer } from "react-navigation";
-import { createStackNavigator } from "react-navigation-stack";
+import {
+  createAppContainer,
+  createStackNavigator,
+  createBottomTabNavigator
+} from "vue-native-router";
 
-import AppNavbar from "./components/AppNavbar.vue";
 import connexion from "./screens/connexion.vue";
 import testa from "./screens/testa.vue";
-import administration from './screens/administration.vue';
+import Home from "./screens/Home.vue";
+import administration from "./screens/administration.vue";
 
-const StackNavigator = createStackNavigator({
-  Home: administration,
-  Test: testa
+const BottomTabNavigator = createBottomTabNavigator({
+  Connexion: connexion,
+  Page: testa,
+  Administration: administration,
+
 });
+
+const StackNavigator = createStackNavigator(
+  {
+    Home: Home,
+    IOSTabs: BottomTabNavigator
+  },
+  {
+    initialRouteName: "Home",
+    defaultNavigationOptions: {
+      headerStyle: {
+        display: "none"
+      }
+    }
+  }
+);
 
 const AppNavigator = createAppContainer(StackNavigator);
 export default {
   components: { AppNavigator }
 };
 </script>
+<style></style>

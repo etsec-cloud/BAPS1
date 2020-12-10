@@ -1,7 +1,7 @@
 <template>
   <view class="page">
     <view class="header">
-      <image class="logo" :source="require('../img/logo.png')" />
+      <image class="logo" :source="require('../assets/img/logoBAP.png')" />
       <view class="mise-en-ligne">
       <text>Mettre une vidéo en ligne</text>
       </view>
