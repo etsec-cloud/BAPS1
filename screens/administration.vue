@@ -25,7 +25,10 @@ export default {
     return {
       text: ""
     };
-  }
+  },
+  components: {
+    headerImg
+  },
 };
 </script>
 
