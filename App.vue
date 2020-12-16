@@ -13,11 +13,13 @@ import connexion from "./screens/connexion.vue";
 import testa from "./screens/testa.vue";
 import Home from "./screens/Home.vue";
 import administration from "./screens/administration.vue";
+import recomandation from "./screens/recomandation.vue";
 
 const BottomTabNavigator = createBottomTabNavigator({
   Connexion: connexion,
   Page: testa,
   Administration: administration,
+  Recomandation : recomandation
 
 });
 
