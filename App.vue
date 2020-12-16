@@ -9,6 +9,7 @@ import {
   createBottomTabNavigator
 } from "vue-native-router";
 
+import register from "./screens/register.vue";
 import connexion from "./screens/connexion.vue";
 import testa from "./screens/testa.vue";
 import Home from "./screens/Home.vue";
@@ -16,6 +17,7 @@ import administration from "./screens/administration.vue";
 import recomandation from "./screens/recomandation.vue";
 
 const BottomTabNavigator = createBottomTabNavigator({
+  Inscription: register,
   Connexion: connexion,
   Page: testa,
   Administration: administration,
