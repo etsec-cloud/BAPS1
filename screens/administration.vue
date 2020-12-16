@@ -1,7 +1,7 @@
 <template>
   <view class="page">
+    <headerImg></headerImg>
     <view class="header">
-      <image class="logo" :source="require('../assets/img/logoBAP.png')" />
       <view class="mise-en-ligne">
       <text>Mettre une vidéo en ligne</text>
       </view>
@@ -11,13 +11,15 @@
     </view>
     <view class="bottom">
       <text class="h1">Lorem Ipsum</text>
-    <view class="">
+      <view class="">
+      </view>
 
     </view>
   </view>
 </template>
 
 <script>
+import headerImg from "../components/base/headerImg";
 export default {
   data: function() {
     return {
@@ -42,6 +44,7 @@ export default {
     display: flex;
     align-items: center;
     margin-bottom:40px ;
+    padding-top: 60px;
 }
 .mise-en-ligne{
     border-width: 1px ;
@@ -51,6 +54,7 @@ export default {
     padding-right:60px ;
     padding-left:60px ;
     margin-bottom:20px ;
+    margin-top:20px;
 }
 hr{
     width: 50vw;
