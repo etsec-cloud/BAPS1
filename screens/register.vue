@@ -68,6 +68,8 @@ export default {
 .fond-form-register {
   background-color: #fff7f2;
   padding-bottom: 50px;
+  border-bottom-right-radius: 45px;
+  border-bottom-left-radius: 45px;
 }
 
 .form-register {
@@ -89,7 +91,8 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  padding: 35px;
 }
 
 .input {

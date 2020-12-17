@@ -23,7 +23,7 @@
             v-model="text"
           />
           <text class="mdp_lost">Mot de passe oublié</text>
-          <button class="bttn" title="login" type="submit">Login</button>
+          <button class="button" title="Bouton" type="submit" id="button" color="#7EBC89"></button>
         </view>
       </view>
 
@@ -58,6 +58,9 @@ export default {
 </script>
 
 <style scoped>
+
+@import url("https://use.typekit.net/kzn4ozu.css");
+
 * {
   box-sizing: border-box;
 }
@@ -68,6 +71,8 @@ export default {
 
 .fond-form {
   background-color: #fff7f2;
+  border-bottom-right-radius: 54px;
+  border-bottom-left-radius: 54px;
 }
 
 .form {
@@ -92,6 +97,7 @@ export default {
 }
 
 .h1 {
+
   font-size: 30px;
   text-align: center;
   margin-bottom: 10%;
@@ -101,11 +107,16 @@ export default {
   font-size: 16px;
   text-align: center;
 }
-.bottom {
+
+#button{
+  width: 2px;
+}
+.bottom-connexion {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  padding: 35px;
 }
 
 .input {
