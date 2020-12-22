@@ -19,10 +19,8 @@ import recomandation from "./screens/recomandation.vue";
 const BottomTabNavigator = createBottomTabNavigator({
   Inscription: register,
   Connexion: connexion,
-  Page: testa,
   Administration: administration,
-  Recomandation : recomandation
-
+  Recomandation: recomandation
 });
 
 const StackNavigator = createStackNavigator(

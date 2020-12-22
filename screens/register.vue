@@ -1,40 +1,45 @@
 <template>
-  <scroll-view :content-container-style="{contentContainer: {
+  <scroll-view
+    :content-container-style="{
+      contentContainer: {
         paddingVertical: 20
-    }}">
+      }
+    }"
+  >
     <view class="page-register">
       <view class="fond-form-register">
-        <view class="header-register">
-
-          <image class="logo-register" :source="require('../assets/img/logoBAP.png')" />
-        </view>
+        <headerImg class="bgcolor"></headerImg>
+        <!-- <view class="header-register">
+          <image
+            class="logo-register"
+            :source="require('../assets/img/logoBAP.png')"
+          />
+        </view> -->
         <view class="form-register">
           <text-input class="input" placeholder="Votre mail" v-model="text" />
           <text-input
-              class="input"
-              placeholder="Entrez votre mot de passe"
-              v-model="text"
+            class="input"
+            placeholder="Entrez votre mot de passe"
+            v-model="text"
           />
           <text-input
-              class="input"
-              placeholder="Confirmez votre mot de passe"
-              v-model="text"
+            class="input"
+            placeholder="Confirmez votre mot de passe"
+            v-model="text"
           />
-
-
         </view>
       </view>
 
       <view class="bottom-register">
-        <BaseBouton></BaseBouton>
+        <BaseBouton text="Register"></BaseBouton>
       </view>
     </view>
   </scroll-view>
 </template>
 
 <script>
-
 import BaseBouton from "../components/base/baseBouton";
+import headerImg from "../components/base/headerImg";
 
 export default {
   props: {
@@ -42,7 +47,7 @@ export default {
       type: Object
     }
   },
-  components: { BaseBouton },
+  components: { BaseBouton, headerImg },
   data: function() {
     return {
       text: ""
@@ -62,12 +67,14 @@ export default {
 }
 .page-register {
   width: 100%;
-  background-color: #166180;
 }
 
 .fond-form-register {
   background-color: #fff7f2;
   padding-bottom: 50px;
+}
+.bgcolor {
+  background-color: #fff7f2;
 }
 
 .form-register {
@@ -86,10 +93,9 @@ export default {
 }
 
 .bottom-register {
-  width: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
 }
 
 .input {

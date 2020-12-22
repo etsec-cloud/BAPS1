@@ -6,8 +6,17 @@
         >Hypnofine, Votre anti-douleur. Venez constater votre progression après
         une écoute . On commence ?</text
       >
+
       <baseBouton text="Start" :on-press="action"> </baseBouton>
-      <button title="start" :on-press="action"></button>
+
+      <view class="buttou">
+        <button
+          class="btn"
+          color="transparent"
+          title="start"
+          :on-press="action"
+        ></button>
+      </view>
     </view>
   </view>
 </template>
@@ -42,5 +51,23 @@ export default {
 .text {
   padding: 0 20px;
   max-width: 300px;
+}
+.btn {
+  background-color: transparent;
+  border-color: transparent;
+  border-width: 1;
+  z-index: 0;
+}
+button {
+  z-index: 0;
+}
+
+.buttou {
+  background-color: #2e86ab;
+  width: 140px;
+  height: 40px;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
 }
 </style>
