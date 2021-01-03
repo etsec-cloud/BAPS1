@@ -2,6 +2,7 @@
   <scroll-view :content-container-style="{contentContainer: {
         paddingVertical: 20
     }}">
+
     <view class="page-register">
       <view class="fond-form-register">
         <view class="header-register">
@@ -33,7 +34,8 @@
 </template>
 
 <script>
-
+import Vue from "vue-native-core";
+import { VueNativeBase } from "native-base";
 import BaseBouton from "../components/base/baseBouton";
 
 export default {
