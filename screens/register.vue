@@ -96,14 +96,9 @@ export default {
 
 .bottom-register {
   display: flex;
-<<<<<<< HEAD
-  flex-direction: column;
-  align-items: center;
-=======
   flex-direction: row;
   justify-content: center;
   padding: 35px;
->>>>>>> 7f047ee982d25b106840d4f66767128c6376737e
 }
 
 .input {
