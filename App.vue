@@ -15,12 +15,19 @@ import testa from "./screens/testa.vue";
 import Home from "./screens/Home.vue";
 import administration from "./screens/administration.vue";
 import recomandation from "./screens/recomandation.vue";
+import apropos from "./screens/apropos.vue";
 
 const BottomTabNavigator = createBottomTabNavigator({
   Inscription: register,
   Connexion: connexion,
   Administration: administration,
+<<<<<<< HEAD
   Recomandation: recomandation
+=======
+  Recomandation : recomandation,
+  apropos: apropos,
+
+>>>>>>> 7849208b0610f7df35b51c92be2f1ccc27538a92
 });
 
 const StackNavigator = createStackNavigator(

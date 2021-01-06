@@ -3,9 +3,14 @@
     :content-container-style="{
       contentContainer: {
         paddingVertical: 20
+<<<<<<< HEAD
       }
     }"
   >
+=======
+    }}">
+
+>>>>>>> 7849208b0610f7df35b51c92be2f1ccc27538a92
     <view class="page-register">
       <view class="fond-form-register">
         <headerImg class="bgcolor"></headerImg>
@@ -38,6 +43,11 @@
 </template>
 
 <script>
+<<<<<<< HEAD
+=======
+import Vue from "vue-native-core";
+import { VueNativeBase } from "native-base";
+>>>>>>> 7849208b0610f7df35b51c92be2f1ccc27538a92
 import BaseBouton from "../components/base/baseBouton";
 import headerImg from "../components/base/headerImg";
 
