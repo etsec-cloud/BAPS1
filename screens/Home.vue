@@ -1,15 +1,20 @@
 <template>
-  <view>
-    <headerImg></headerImg>
-    <view class="flex">
-      <text class="text"
-        >Hypnofine, Votre anti-douleur. Venez constater votre progression après
-        une écoute . On commence ?</text
-      >
-      <baseBouton text="Start" :on-press="action"> </baseBouton>
-      <button title="start" :on-press="action"></button>
+  <scroll-view :content-container-style="{contentContainer: {
+        paddingVertical: 20
+    }}">
+    <view class="home-page">
+      <headerImg></headerImg>
+      <view class="flex">
+        <text class="text"
+          >Hypnofine, Votre anti-douleur. Venez constater votre progression après
+          une écoute . On commence ?</text
+        >
+        <image class="home-fond" :source="require('../assets/img/homepagefond.png')" />
+        <baseBouton text="Start" :on-press="action"> </baseBouton>
+        <button title="start" :on-press="action"></button>
+      </view>
     </view>
-  </view>
+  </scroll-view>
 </template>
 
 <script>
@@ -33,7 +38,9 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+@import url("https://use.typekit.net/kzn4ozu.css");
+
 .flex {
   display: flex;
   flex-direction: column;
@@ -42,5 +49,12 @@ export default {
 .text {
   padding: 0 20px;
   max-width: 300px;
+  font-size: 18px;
+  text-align: center;
+
 }
+
+
+
+
 </style>
