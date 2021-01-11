@@ -1,8 +1,9 @@
 <?php
+echo "coucou";
 
 //action.php
 
-$connect = new PDO("mysql:host=localhost;dbname=testing", "root", "");
+$connect = new PDO("mysql:host=127.0.0.1:8889;dbname=testDb", "root", "root");
 $received_data = json_decode(file_get_contents("php://input"));
 $data = array();
 if($received_data->action == 'fetchall')
