@@ -82,7 +82,7 @@ export default {
     },
     fetchAllData() {
       axios
-        .post("../assets/script/action.php", {
+        .post("http://127.0.0.1:8889/cours/BAPS1/assets/script/action.php", {
           action: "fetchall"
         })
         .then(function(response) {
