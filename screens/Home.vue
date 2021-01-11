@@ -46,15 +46,7 @@ export default {
   mounted() {
     axios
       .get("http://127.0.0.1:3000/users")
-      .then(response => response.json())
-      .then(users => console.log(users))
-      .catch(function(error) {
-        console.log(
-          "There has been a problem with your fetch operation: " + error.message
-        );
-        // ADD THIS THROW error
-        throw error;
-      });
+      .then(response => (users = response.json()));
   },
   methods: {
     action() {
