@@ -6,7 +6,7 @@
         >Hypnofine, Votre anti-douleur. Venez constater votre progression après
         une écoute . On commence ?</text
       >
-
+      <text> {{ users }} </text>
       <baseBouton text="Start" :on-press="action"> </baseBouton>
       <view class="buttou">
         <button
@@ -16,38 +16,13 @@
           :on-press="action"
         ></button>
       </view>
-    </view>
 
-    <view>
-      <view v-for="(row, index) in allData" :key="index">
-        <text>{{ row.first_name }}</text>
-        <text>{{ row.last_name }}</text>
-      </view>
-    </view>
-
-    <view>
-      <text-input
-        type="text"
-        class="form-control"
-        v-model="first_name"
-        placeholder="Enter First Name"
-      />
-    </view>
-
-    <view>
-      <text-input
-        type="text"
-        class="form-control"
-        v-model="last_name"
-        placeholder="Enter Last Name"
-      />
-    </view>
-    <view>
-      <button
-        class="btn btn-success btn-xs"
-        :on-press="fetchAllData"
-        title="go"
-      />
+      <text> info : {{ users }} </text>
+      <!-- <view v-for="(user, index) in users" :key="index">
+          <text>
+            coucou
+          </text>
+        </view> -->
     </view>
   </view>
 </template>
@@ -59,114 +34,32 @@ import headerImg from "../components/base/headerImg";
 import axios from "axios";
 
 export default {
-  data() {
-    return {
-      last_name: "",
-      first_name: "",
-      allData: "",
-      myModel: false,
-      actionButton: "Insert",
-      dynamicTitle: "Add Data"
-    };
-  },
   components: {
     baseBouton,
     headerImg
   },
   props: {
-    navigation: { type: Object }
+    navigation: { type: Object },
+    users: "",
+    info: ""
+  },
+  mounted() {
+    axios
+      .get("http://127.0.0.1:3000/users")
+      .then(response => response.json())
+      .then(users => console.log(users))
+      .catch(function(error) {
+        console.log(
+          "There has been a problem with your fetch operation: " + error.message
+        );
+        // ADD THIS THROW error
+        throw error;
+      });
   },
   methods: {
     action() {
       this.navigation.navigate("IOSTabs");
-    },
-    fetchAllData() {
-      axios
-        .post("http://127.0.0.1:8889/cours/BAPS1/assets/script/action.php", {
-          action: "fetchall"
-        })
-        .then(function(response) {
-          allData = response.data;
-        });
-      console.log("loge");
-    },
-    openModel: function() {
-      first_name = "";
-      last_name = "";
-      actionButton = "Insert";
-      dynamicTitle = "Add Data";
-      myModel = true;
-    },
-    submitData: function() {
-      if (first_name != "" && last_name != "") {
-        if (actionButton == "Insert") {
-          axios
-            .post("http://10.0.0.2:8888/cours/BAPS1/assets/script/action.php", {
-              action: "insert",
-              firstName: first_name,
-              lastName: last_name
-            })
-            .then(function(response) {
-              myModel = false;
-              fetchAllData();
-              first_name = "";
-              last_name = "";
-              alert(response.data.message);
-            });
-        }
-        if (actionButton == "Update") {
-          axios
-            .post("http://10.0.0.2:8888/cours/BAPS1/assets/script/action.php", {
-              action: "update",
-              firstName: first_name,
-              lastName: last_name,
-              hiddenId: hiddenId
-            })
-            .then(function(response) {
-              myModel = false;
-              fetchAllData();
-              first_name = "";
-              last_name = "";
-              hiddenId = "";
-              alert(response.data.message);
-            });
-        }
-      } else {
-        alert("Fill All Field");
-      }
-    },
-    fetchData: function(id) {
-      axios
-        .post("http://10.0.0.2:8888/cours/BAPS1/assets/script/action.php", {
-          action: "fetchSingle",
-          id: id
-        })
-        .then(function(response) {
-          first_name = response.data.first_name;
-          last_name = response.data.last_name;
-          hiddenId = response.data.id;
-          myModel = true;
-          actionButton = "Update";
-          dynamicTitle = "Edit Data";
-        });
-    },
-    deleteData: function(id) {
-      if (confirm("Are you sure you want to remove this data?")) {
-        axios
-          .post("http://10.0.0.2:8888/cours/BAPS1/assets/script/action.php", {
-            action: "delete",
-            id: id
-          })
-          .then(function(response) {
-            fetchAllData();
-            alert(response.data.message);
-          });
-      }
     }
-  },
-  created() {
-    this.fetchAllData();
-    console.log("start");
   }
 };
 </script>
