@@ -32,7 +32,8 @@
     "vue-native-core": "^0.1.4",
     "vue-native-helper": "^0.1.4",
     "vue-native-router": "^0.2.0",
-    "vue-soundcloud-player": "^1.2.0"
+    "vue-soundcloud-player": "^1.2.0",
+    "expo-sqlite": "~8.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",

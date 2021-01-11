@@ -2,8 +2,12 @@
   <view>
     <headerImg></headerImg>
     <view class="flex">
-      <baseBouton text="Start" :on-press="action"> </baseBouton>
+      <text class="text"
+        >Hypnofine, Votre anti-douleur. Venez constater votre progression après
+        une écoute . On commence ?</text
+      >
 
+      <baseBouton text="Start" :on-press="action"> </baseBouton>
       <view class="buttou">
         <button
           class="btn"
