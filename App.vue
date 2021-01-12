@@ -16,6 +16,7 @@ import Home from "./screens/Home.vue";
 import administration from "./screens/administration.vue";
 import recomandation from "./screens/recomandation.vue";
 import apropos from "./screens/apropos.vue";
+import paremètrecompte from "./screens/paramètrecompte";
 
 const BottomTabNavigator = createBottomTabNavigator({
   Inscription: register,
@@ -24,6 +25,7 @@ const BottomTabNavigator = createBottomTabNavigator({
   Administration: administration,
   Recomandation : recomandation,
   apropos: apropos,
+  paremètrecompte : paremètrecompte,
 
 });
 
