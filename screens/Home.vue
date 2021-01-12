@@ -1,32 +1,22 @@
 <template>
-  <view>
-    <headerImg></headerImg>
-    <view class="flex">
-      <text class="text"
-        >Hypnofine, Votre anti-douleur. Venez constater votre progression après
-        une écoute . On commence ?</text
-      >
-      <baseBouton text="Start" :on-press="action"> </baseBouton>
-      <view class="buttou">
-        <button
-          class="btn"
-          color="transparent"
-          title="start"
-          :on-press="action"
-        ></button>
-      </view>
-      
-  <scroll-view :content-container-style="{contentContainer: {
+  <scroll-view
+    :content-container-style="{
+      contentContainer: {
         paddingVertical: 20
-    }}">
+      }
+    }"
+  >
     <view class="home-page">
       <headerImg></headerImg>
       <view class="flex">
         <text class="text"
-          >Hypnofine, Votre anti-douleur. Venez constater votre progression après
-          une écoute . On commence ?</text
+          >Hypnofine, Votre anti-douleur. Venez constater votre progression
+          après une écoute . On commence ?</text
         >
-        <image class="home-fond" :source="require('../assets/img/homepagefond.png')" />
+        <image
+          class="home-fond"
+          :source="require('../assets/img/homepagefond.png')"
+        />
         <baseBouton text="Start" :on-press="action"> </baseBouton>
         <button title="start" :on-press="action"></button>
       </view>
@@ -85,7 +75,6 @@ export default {
   max-width: 300px;
   font-size: 18px;
   text-align: center;
-
 }
 .btn {
   background-color: transparent;
@@ -105,4 +94,3 @@ button {
   align-items: center;
 }
 </style>
-
