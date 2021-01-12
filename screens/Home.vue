@@ -6,7 +6,6 @@
         >Hypnofine, Votre anti-douleur. Venez constater votre progression après
         une écoute . On commence ?</text
       >
-      <text> {{ users }} </text>
       <baseBouton text="Start" :on-press="action"> </baseBouton>
       <view class="buttou">
         <button
@@ -17,7 +16,7 @@
         ></button>
       </view>
 
-      <text> info : {{ users }} </text>
+      <text> Data : {{ info }} </text>
       <!-- <view v-for="(user, index) in users" :key="index">
           <text>
             coucou
@@ -39,14 +38,23 @@ export default {
     headerImg
   },
   props: {
-    navigation: { type: Object },
-    users: "",
-    info: ""
+    navigation: { type: Object }
+  },
+  data: function() {
+    return {
+      info: null
+    };
   },
   mounted() {
-    axios
-      .get("http://127.0.0.1:3000/users")
-      .then(response => (users = response.json()));
+    return axios
+      .get("http://192.168.1.57:3000/users")
+      .then(response => {
+        this.info = response.data;
+        return response.data;
+      })
+      .catch(e => {
+        console.log("Error", e);
+      });
   },
   methods: {
     action() {

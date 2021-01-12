@@ -19,6 +19,7 @@ app.get("/users", function(req, res) {
     connection.query("SELECT * FROM user", function(error, results, fields) {
       // If some error occurs, we throw an error.
       if (error) throw error;
+      console.log(results);
 
       // Getting the 'response' from the database and sending it to our route. This is were the data is.
       res.send(results);
