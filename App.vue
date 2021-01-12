@@ -29,7 +29,17 @@ const BottomTabNavigator = createBottomTabNavigator({
       title: '',
       tabBarIcon: ({tintColor, activeTintColor}) => (
           <Icon name="plus" size={30} color={tintColor} />
-      )
+      ),
+      tabBarOptions: {
+        activeTintColor: '#7BBC8A',
+        inactiveTintColor: '#FFF7F2',
+        showIcon: true,
+        style: { backgroundColor: '#2C87AD', borderTopWidth: 0.5, borderTopColor: '#7BBC8A'},
+        labelStyle: {
+          display: "none"
+
+        }
+      },
     },
   },
   Connexion: {
@@ -38,7 +48,17 @@ const BottomTabNavigator = createBottomTabNavigator({
       title: ``,
       tabBarIcon: ({tintColor, activeTintColor}) => (
           <Icon name="users" size={30} color={tintColor} />
-      )
+      ),
+      tabBarOptions: {
+        activeTintColor: '#7BBC8A',
+        inactiveTintColor: '#FFF7F2',
+        showIcon: true,
+        style: { backgroundColor: '#2C87AD', borderTopWidth: 0.5, borderTopColor: '#7BBC8A'},
+        labelStyle: {
+          display: "none"
+
+        }
+      },
     }),
   },
 
@@ -48,11 +68,22 @@ const BottomTabNavigator = createBottomTabNavigator({
       title: ``,
       tabBarIcon: ({tintColor, activeTintColor}) => (
          <MaterialCommunityIcons name="database-settings" size={30} color={tintColor} />
-      )
+
+
+      ),
+      tabBarOptions: {
+        activeTintColor: '#7BBC8A',
+        inactiveTintColor: '#FFF7F2',
+        showIcon: true,
+        style: { backgroundColor: '#2C87AD', borderTopWidth: 0.5, borderTopColor: '#7BBC8A'},
+        labelStyle: {
+          display: "none"
+
+        }
+      },
     }),
   },
-  Recomandation : recomandation,
-  apropos: apropos,
+
   paremètrecompte : paremètrecompte,
 
 });
@@ -67,21 +98,13 @@ const StackNavigator = createStackNavigator(
 
     defaultNavigationOptions: {
 
-      tabBarOptions: {
-        activeTintColor: '#7BBC8A',
-        inactiveTintColor: '#FFF7F2',
-        showIcon: true,
-        style: {height: 54, backgroundColor: '#7BBC8A', borderTopWidth: 0.5, borderTopColor: '#7BBC8A'},
-        labelStyle: {
-          fontSize: 10,
 
-        }
-      },
 
       headerStyle: {
         display: "none"
       }
-    }
+    },
+
   }
 );
 
