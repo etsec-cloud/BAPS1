@@ -22,6 +22,10 @@ import paremètrecompte from "./screens/paramètrecompte";
 
 
 
+import { StatusBar } from "expo-status-bar";
+import React, { useEffect } from "react";
+import { Platform, StyleSheet, Text, View } from "react-native";
+
 const BottomTabNavigator = createBottomTabNavigator({
   Register: {
     screen: register,
@@ -85,7 +89,6 @@ const BottomTabNavigator = createBottomTabNavigator({
   },
 
   paremètrecompte : paremètrecompte,
-
 });
 
 const StackNavigator = createStackNavigator(

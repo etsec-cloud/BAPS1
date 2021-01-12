@@ -1,7 +1,14 @@
 <template>
-  <view class="page">
-    <headerImg></headerImg>
-    <view>
+  <scroll-view
+    :content-container-style="{
+      contentContainer: {
+        paddingVertical: 20
+      }
+    }"
+  >
+    <view class="page">
+      <headerImg></headerImg>
+      <view>
         <text class="h1">Lorem Ipsum</text>
         <view class="flex">
           <image :source="require('../assets/img/exempleimg.png')" class="img"/>
@@ -10,8 +17,7 @@
             <button class="button" title="Bouton" type="submit" id="button" color="#7EBC89"></button>
           </view>
       </view>
-    </view>
-    <view>
+      <view>
         <text class="h1">Lorem Ipsum</text>
       <view class="flexe">
           <image :source="require('../assets/img/exempleimg.png')" class="img"/>
@@ -23,9 +29,8 @@
     </view>
     <view class="slider">
       <text class="sh1">Lorem Ipsum</text>
-
     </view>
-  </view>
+  </scroll-view>
 </template>
 
 <script>
@@ -44,39 +49,37 @@ export default {
 </script>
 
 <style scoped>
-.flex{
-    margin-left: 10px;
-    display: flex;
-    flex-direction: row;
-    width: 60%;
-
+.flex {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+  width: 60%;
 }
-.flexe{
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    width: 60%;
-
+.flexe {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  width: 60%;
 }
-.h1{
-    font-size: 30px;
-    margin-bottom: 20px;
-    margin-top: 10px;
+.h1 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
-.p{
-    padding-top: 10px;
-    padding-left: 5px;
-    padding-right: 25px;
-    color: #707070;
-    font-size: 15px;
+.p {
+  padding-top: 10px;
+  padding-left: 5px;
+  padding-right: 25px;
+  color: #707070;
+  font-size: 15px;
 }
 
-.p2{
-    padding-top: 10px;
-    padding-left: 25px;
-    padding-right: 5px;
-    color: #707070;
-    font-size: 15px;
+.p2 {
+  padding-top: 10px;
+  padding-left: 25px;
+  padding-right: 5px;
+  color: #707070;
+  font-size: 15px;
 }
 .slider{
   margin-top: 40px;

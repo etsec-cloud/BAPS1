@@ -1,15 +1,14 @@
 <template>
-  <scroll-view :content-container-style="{contentContainer: {
+  <scroll-view
+    :content-container-style="{
+      contentContainer: {
         paddingVertical: 20
-    }}">
+      }
+    }"
+  >
     <view class="page">
       <view class="fond-form">
-        <view class="header">
-          <image class="profil" :source="require('../assets/img/profil.png')" />
-          <view class="arrow-left"></view>
-        </view>
-
-        <image class="logo" :source="require('../assets/img/logoBAP.png')" />
+        <headerImg class="bgcolor"></headerImg>
         <view class="form">
           <text class="h1">LOREM IPSUM</text>
           <text class="under_h1"
@@ -36,6 +35,7 @@
 
 <script>
 import BaseBouton from "../components/base/baseBouton";
+import headerImg from "../components/base/headerImg";
 
 export default {
   props: {
@@ -43,7 +43,7 @@ export default {
       type: Object
     }
   },
-  components: { BaseBouton },
+  components: { BaseBouton, headerImg },
   data: function() {
     return {
       text: ""
