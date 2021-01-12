@@ -15,15 +15,23 @@
           :on-press="action"
         ></button>
       </view>
-
-      <text> Data : {{ info }} </text>
-      <!-- <view v-for="(user, index) in users" :key="index">
-          <text>
-            coucou
-          </text>
-        </view> -->
+      
+  <scroll-view :content-container-style="{contentContainer: {
+        paddingVertical: 20
+    }}">
+    <view class="home-page">
+      <headerImg></headerImg>
+      <view class="flex">
+        <text class="text"
+          >Hypnofine, Votre anti-douleur. Venez constater votre progression après
+          une écoute . On commence ?</text
+        >
+        <image class="home-fond" :source="require('../assets/img/homepagefond.png')" />
+        <baseBouton text="Start" :on-press="action"> </baseBouton>
+        <button title="start" :on-press="action"></button>
+      </view>
     </view>
-  </view>
+  </scroll-view>
 </template>
 
 <script>
@@ -64,7 +72,9 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+@import url("https://use.typekit.net/kzn4ozu.css");
+
 .flex {
   display: flex;
   flex-direction: column;
@@ -73,6 +83,9 @@ export default {
 .text {
   padding: 0 20px;
   max-width: 300px;
+  font-size: 18px;
+  text-align: center;
+
 }
 .btn {
   background-color: transparent;
@@ -83,7 +96,6 @@ export default {
 button {
   z-index: 0;
 }
-
 .buttou {
   background-color: #2e86ab;
   width: 140px;
@@ -93,3 +105,4 @@ button {
   align-items: center;
 }
 </style>
+
