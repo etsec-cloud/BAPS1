@@ -6,19 +6,17 @@
       }
     }"
   >
-    <view class="home-page">
+    <view class="home-page" :style="{'background-image': require('../assets/img/homepagefond.png')}">
       <headerImg></headerImg>
       <view class="flex">
         <text class="text"
           >Hypnofine, Votre anti-douleur. Venez constater votre progression
           après une écoute . On commence ?</text
         >
-        <image
-          class="home-fond"
-          :source="require('../assets/img/homepagefond.png')"
-        />
-        <baseBouton text="Start" :on-press="action"> </baseBouton>
-        <button title="start" :on-press="action"></button>
+
+        <baseBouton @press="action" text="Start" > </baseBouton>
+        <button class="cust-bttn" color="" title="start" :on-press="action"></button>
+
       </view>
     </view>
   </scroll-view>
@@ -64,6 +62,10 @@ export default {
 
 <style scoped>
 @import url("https://use.typekit.net/kzn4ozu.css");
+
+.home-fond{
+  position: relative;
+}
 
 .flex {
   display: flex;

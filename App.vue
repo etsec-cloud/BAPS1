@@ -19,8 +19,7 @@ import administration from "./screens/administration.vue";
 import recomandation from "./screens/recomandation.vue";
 import apropos from "./screens/apropos.vue";
 import paremètrecompte from "./screens/paramètrecompte";
-import { StatusBar } from "expo-status-bar";
-import { Platform, StyleSheet, Text, View } from "react-native";
+
 
 const BottomTabNavigator = createBottomTabNavigator({
   Register: {

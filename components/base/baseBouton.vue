@@ -1,4 +1,4 @@
-<template>
+<template  >
   <view class="bouton">
     <text class="centerText"> {{ text }}</text>
   </view>
@@ -7,7 +7,7 @@
 <script>
 export default {
   name: "baseBouton",
-  props: ["text"]
+  props: ["text"],
 };
 </script>
 
