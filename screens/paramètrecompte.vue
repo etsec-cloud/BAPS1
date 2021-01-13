@@ -19,7 +19,12 @@
         <view style="{styles.container}">
           <switch v-model="value1" />
         </view>
+<<<<<<< HEAD:screens/parametrecompte.vue
         <view class="flexe">
+=======
+        </view>
+        <view class="flexe"> 
+>>>>>>> b508258f7ea165e223079de8d1d183be4c772147:screens/paramètrecompte.vue
           <text class="h2">Daltonisme</text>
           <view style="{styles.container}">
             <switch v-model="value2" />
@@ -31,11 +36,18 @@
             <switch v-model="value3" />
           </view>
         </view>
+<<<<<<< HEAD:screens/parametrecompte.vue
         <text class="h1">Concernant Hypnofine</text>
         <text class="h3">Lire le règlement</text>
         <text class="h3">Lire les conditions générales d'utilisateur</text>
       </view>
     </view>
+=======
+      
+      <text class="h1">Concernant Hypnofine</text>
+      <text class="h3">Lire le règlement</text>
+      <text class="h3">Lire les conditions générales d'utilisateur</text>
+>>>>>>> b508258f7ea165e223079de8d1d183be4c772147:screens/paramètrecompte.vue
   </view>
 </template>
 
@@ -65,10 +77,15 @@ export default {
   },
   methods: {
     goToMesInfoScreen() {
-      this.navigation.navigate("mesinfoscreen");
+      this.navigation.navigate("./mesinfoscreen.vue");
     },
+<<<<<<< HEAD:screens/parametrecompte.vue
     goToNotifScreen() {
       this.navigation.navigate("notifscreen");
+=======
+    goToNotifScreen(){
+        this.navigation.navigate("./notifscreen.vue")
+>>>>>>> b508258f7ea165e223079de8d1d183be4c772147:screens/paramètrecompte.vue
     },
     handleChange: function(val) {
       this.value = val;
@@ -77,7 +94,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .flex {
   display: flex;
   flex-direction: column;

@@ -18,7 +18,7 @@ import Home from "./screens/Home.vue";
 import administration from "./screens/administration.vue";
 import recomandation from "./screens/recomandation.vue";
 import apropos from "./screens/apropos.vue";
-import parametrecompte from "./screens/parametrecompte.vue";
+import paramètrecompte from "./screens/paramètrecompte.vue";
 import notifscreen from "./screens/notifscreen.vue";
 import mesinfoscreen from "./screens/mesinfoscreen.vue";
 
@@ -95,7 +95,11 @@ const BottomTabNavigator = createBottomTabNavigator({
     })
   },
 
+<<<<<<< HEAD
   parametrecompte: parametrecompte
+=======
+  paramètrecompte: paramètrecompte ,
+>>>>>>> b508258f7ea165e223079de8d1d183be4c772147
 });
 
 const StackNavigator = createStackNavigator(

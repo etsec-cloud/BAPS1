@@ -29,7 +29,11 @@
 import Vue from "vue-native-core";
 import baseBouton from "../components/base/baseBouton";
 import headerImg from "../components/base/headerImg";
+<<<<<<< HEAD
 import parametrecompte from "./parametrecompte.vue";
+=======
+import paramètrecompte from "./paramètrecompte.vue";
+>>>>>>> b508258f7ea165e223079de8d1d183be4c772147
 import notifscreen from "./notifscreen.vue";
 
 export default {
@@ -47,10 +51,17 @@ export default {
   },
   methods: {
     goToParametreScreen() {
+<<<<<<< HEAD
       this.navigation.navigate("parametrecompte");
     },
     goToNotifScreen() {
       this.navigation.navigate("notifscreen");
+=======
+        this.navigation.navigate("./paramètrecompte");
+    },
+    goToNotifScreen(){
+        this.navigation.navigate("./notifscreen")
+>>>>>>> b508258f7ea165e223079de8d1d183be4c772147
     },
     handleChange: function(val) {
       this.value = val;
@@ -59,7 +70,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .flex {
   display: flex;
   flex-direction: column;
