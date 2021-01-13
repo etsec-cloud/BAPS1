@@ -16,16 +16,16 @@
           />
         </view> -->
         <view class="form-register">
-          <text-input class="input" placeholder="Votre mail" v-model="text" />
+          <text-input class="input" placeholder="Votre mail" v-model="email" />
           <text-input
             class="input"
             placeholder="Entrez votre mot de passe"
-            v-model="text"
+            v-model="password"
           />
           <text-input
             class="input"
             placeholder="Confirmez votre mot de passe"
-            v-model="text"
+            v-model="confirm_password"
           />
         </view>
       </view>
@@ -52,7 +52,9 @@ export default {
   components: { BaseBouton, headerImg },
   data: function() {
     return {
-      text: ""
+      email: "",
+      password: "",
+      confirm_password: ""
     };
   },
   methods: {

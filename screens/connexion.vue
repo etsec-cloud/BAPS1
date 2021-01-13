@@ -15,11 +15,11 @@
             >Lorem ipsum dolor sit amet, consectetur adipiscin elit , sed do
             eiusmod tempor</text
           >
-          <text-input class="input" placeholder="Votre mail" v-model="text" />
+          <text-input class="input" placeholder="Votre mail" v-model="email" />
           <text-input
             class="input"
             placeholder="Entrez votre mot de passe"
-            v-model="text"
+            v-model="password"
           />
           <text class="mdp_lost">Mot de passe oublié</text>
           <button class="button" title="Bouton" type="submit" id="button" color="#7EBC89"></button>
@@ -46,7 +46,8 @@ export default {
   components: { BaseBouton, headerImg },
   data: function() {
     return {
-      text: ""
+      email: "",
+      password: ""
     };
   },
   methods: {
