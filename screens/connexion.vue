@@ -1,26 +1,25 @@
 <template>
-  <scroll-view :content-container-style="{contentContainer: {
+  <scroll-view
+    :content-container-style="{
+      contentContainer: {
         paddingVertical: 20
-    }}">
+      }
+    }"
+  >
     <view class="page">
       <view class="fond-form">
-        <view class="header">
-          <image class="profil" :source="require('../assets/img/profil.png')" />
-          <view class="arrow-left"></view>
-        </view>
-
-        <image class="logo" :source="require('../assets/img/logoBAP.png')" />
+        <headerImg class="bgcolor"></headerImg>
         <view class="form">
           <text class="h1">LOREM IPSUM</text>
           <text class="under_h1"
             >Lorem ipsum dolor sit amet, consectetur adipiscin elit , sed do
             eiusmod tempor</text
           >
-          <text-input class="input" placeholder="Votre mail" v-model="text" />
+          <text-input class="input" placeholder="Votre mail" v-model="email" />
           <text-input
             class="input"
             placeholder="Entrez votre mot de passe"
-            v-model="text"
+            v-model="password"
           />
           <text class="mdp_lost">Mot de passe oublié</text>
           <button class="button" title="Bouton" type="submit" id="button" color="#7EBC89"></button>
@@ -36,6 +35,7 @@
 
 <script>
 import BaseBouton from "../components/base/baseBouton";
+import headerImg from "../components/base/headerImg";
 
 export default {
   props: {
@@ -43,10 +43,11 @@ export default {
       type: Object
     }
   },
-  components: { BaseBouton },
+  components: { BaseBouton, headerImg },
   data: function() {
     return {
-      text: ""
+      email: "",
+      password: ""
     };
   },
   methods: {

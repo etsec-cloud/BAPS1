@@ -22,7 +22,9 @@
 <script>
 import Vue from "vue-native-core";
 import baseBouton from "../components/base/baseBouton";
-import headerImg from "../components/base/headerImg"
+import headerImg from "../components/base/headerImg";
+import parametrecompte from "parametrecompte.vue";
+import mesinfoscreen from "mesinfoscreen.vue";
 
 export default {
   components: {
@@ -41,7 +43,7 @@ export default {
   },
   methods: {
     goToParametreScreen() {
-      this.navigation.navigate("paramètrecompte");
+      this.navigation.navigate("parametrecompte");
     },
     goToMesInfoScreen() {
       this.navigation.navigate("mesinfoscreen");

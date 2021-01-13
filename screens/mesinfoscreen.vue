@@ -27,7 +27,9 @@
 <script>
 import Vue from "vue-native-core";
 import baseBouton from "../components/base/baseBouton";
-import headerImg from "../components/base/headerImg"
+import headerImg from "../components/base/headerImg";
+import parametrecompte from "parametrecompte.vue";
+import notifscreen from "notifscreen.vue";
 
 export default {
   components: {
@@ -46,7 +48,7 @@ export default {
   },
   methods: {
     goToParametreScreen() {
-        this.navigation.navigate("paramètrecompte");
+        this.navigation.navigate("parametrecompte");
     },
     goToNotifScreen(){
         this.navigation.navigate("notifscreen")
