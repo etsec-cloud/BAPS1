@@ -26,6 +26,12 @@ app.get("/users", function(req, res) {
     });
   });
 });
+app.post("/users", (req, res, next) => {
+  console.log(req.body);
+  res.status(201).json({
+    message: "Objet créé !"
+  });
+});
 
 // Starting our server.
 app.listen(3000, () => {
