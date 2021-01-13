@@ -19,6 +19,7 @@
         <view style="{styles.container}">
           <switch v-model="value1" />
         </view>
+        </view>
         <view class="flexe"> 
           <text class="h2">Daltonisme</text>
           <view style = {styles.container}>
@@ -35,6 +36,7 @@
                 
             </view>
         </view>
+      
       <text class="h1">Concernant Hypnofine</text>
       <text class="h3">Lire le règlement</text>
       <text class="h3">Lire les conditions générales d'utilisateur</text>
@@ -45,8 +47,8 @@
 import Vue from "vue-native-core";
 import baseBouton from "../components/base/baseBouton";
 import headerImg from "../components/base/headerImg";
-import notifscreen from "notifscreen.vue";
-import mesinfoscreen from "mesinfoscreen.vue";
+import notifscreen from "./notifscreen.vue";
+import mesinfoscreen from "./mesinfoscreen.vue";
 
 export default {
   components: {
@@ -67,10 +69,10 @@ export default {
   },
   methods: {
     goToMesInfoScreen() {
-      this.navigation.navigate("mesinfoscreen");
+      this.navigation.navigate("./mesinfoscreen.vue");
     },
     goToNotifScreen(){
-        this.navigation.navigate("notifscreen")
+        this.navigation.navigate("./notifscreen.vue")
     },
     handleChange: function(val) {
           this.value =val;
@@ -79,7 +81,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .flex {
   display: flex;
   flex-direction: column;

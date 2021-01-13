@@ -18,7 +18,7 @@ import Home from "./screens/Home.vue";
 import administration from "./screens/administration.vue";
 import recomandation from "./screens/recomandation.vue";
 import apropos from "./screens/apropos.vue";
-import parametrecompte from "./screens/parametrecompte.vue";
+import paramètrecompte from "./screens/paramètrecompte.vue";
 import notifscreen from "./screens/notifscreen.vue";
 import mesinfoscreen from "./screens/mesinfoscreen.vue";
 
@@ -96,7 +96,7 @@ const BottomTabNavigator = createBottomTabNavigator({
     })
   },
 
-  paremètrecompte: paremètrecompte
+  paramètrecompte: paramètrecompte ,
 });
 
 const StackNavigator = createStackNavigator(

@@ -28,8 +28,8 @@
 import Vue from "vue-native-core";
 import baseBouton from "../components/base/baseBouton";
 import headerImg from "../components/base/headerImg";
-import parametrecompte from "parametrecompte.vue";
-import notifscreen from "notifscreen.vue";
+import paramètrecompte from "./paramètrecompte.vue";
+import notifscreen from "./notifscreen.vue";
 
 export default {
   components: {
@@ -48,10 +48,10 @@ export default {
   },
   methods: {
     goToParametreScreen() {
-        this.navigation.navigate("parametrecompte");
+        this.navigation.navigate("./paramètrecompte");
     },
     goToNotifScreen(){
-        this.navigation.navigate("notifscreen")
+        this.navigation.navigate("./notifscreen")
     },
     handleChange: function(val) {
           this.value =val;
@@ -61,7 +61,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 .flex {
   display: flex;
   flex-direction: column;
