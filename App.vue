@@ -21,6 +21,7 @@ import apropos from "./screens/apropos.vue";
 import paremètrecompte from "./screens/paramètrecompte";
 import { StatusBar } from "expo-status-bar";
 import { Platform, StyleSheet, Text, View } from "react-native";
+import AudioPlay from "./components/AudioPlay.vue";
 
 const BottomTabNavigator = createBottomTabNavigator({
   Register: {
@@ -78,6 +79,33 @@ const BottomTabNavigator = createBottomTabNavigator({
           size={30}
           color={tintColor}
         />
+      ),
+      tabBarOptions: {
+        activeTintColor: "#7BBC8A",
+        inactiveTintColor: "#FFF7F2",
+        showIcon: true,
+        style: {
+          backgroundColor: "#2C87AD",
+          borderTopWidth: 0.5,
+          borderTopColor: "#7BBC8A"
+        },
+        labelStyle: {
+          display: "none"
+        }
+      }
+    })
+  },
+
+  AudioPlay: {
+    screen: AudioPlay,
+    navigationOptions: ({ navigation }) => ({
+      title: ``,
+      tabBarIcon: ({ tintColor, activeTintColor }) => (
+          <MaterialCommunityIcons
+              name="database-settings"
+              size={30}
+              color={tintColor}
+          />
       ),
       tabBarOptions: {
         activeTintColor: "#7BBC8A",

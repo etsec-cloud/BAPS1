@@ -42,7 +42,8 @@
     "vue-native-helper": "^0.1.4",
     "vue-native-router": "^0.2.0",
     "vue-slider-component": "^3.2.11",
-    "vue-soundcloud-player": "^1.2.0"
+    "vue-soundcloud-player": "^1.2.0",
+    "expo-av": "~8.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
