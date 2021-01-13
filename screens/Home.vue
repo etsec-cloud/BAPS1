@@ -6,10 +6,7 @@
       }
     }"
   >
-    <view
-      class="home-page"
-      :style="{ 'background-image': require('../assets/img/homepagefond.png') }"
-    >
+    <view class="home-fond">
       <headerImg></headerImg>
       <view class="flex">
         <text class="text"
@@ -29,7 +26,7 @@ import Vue from "vue-native-core";
 import baseBouton from "../components/base/baseBouton";
 import headerImg from "../components/base/headerImg";
 import axios from "axios";
-
+import backgroundUrl from "../assets/img/homepagefond.png";
 export default {
   components: {
     baseBouton,
@@ -40,7 +37,8 @@ export default {
   },
   data: function() {
     return {
-      info: null
+      info: null,
+      backgroundUrl
     };
   },
   mounted() {
@@ -71,6 +69,7 @@ export default {
 .home-fond {
   position: relative;
 }
+
 .boutonnade {
   display: flex;
   background-color: #2e86ab;
