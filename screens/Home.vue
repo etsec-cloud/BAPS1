@@ -29,7 +29,6 @@ import Vue from "vue-native-core";
 import baseBouton from "../components/base/baseBouton";
 import headerImg from "../components/base/headerImg";
 import axios from "axios";
-
 export default {
   components: {
     baseBouton,
