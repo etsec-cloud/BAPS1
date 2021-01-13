@@ -22,7 +22,6 @@ import parametrecompte from "./screens/parametrecompte.vue";
 import notifscreen from "./screens/notifscreen.vue";
 import mesinfoscreen from "./screens/mesinfoscreen.vue";
 
-
 const BottomTabNavigator = createBottomTabNavigator({
   Register: {
     screen: register,
@@ -96,7 +95,7 @@ const BottomTabNavigator = createBottomTabNavigator({
     })
   },
 
-  paremètrecompte: paremètrecompte
+  parametrecompte: parametrecompte
 });
 
 const StackNavigator = createStackNavigator(
