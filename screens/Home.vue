@@ -6,17 +6,19 @@
       }
     }"
   >
-    <view class="home-page" :style="{'background-image': require('../assets/img/homepagefond.png')}">
+    <view
+      class="home-page"
+      :style="{ 'background-image': require('../assets/img/homepagefond.png') }"
+    >
       <headerImg></headerImg>
       <view class="flex">
         <text class="text"
           >Hypnofine, Votre anti-douleur. Venez constater votre progression
           après une écoute . On commence ?</text
         >
-
-        <baseBouton @press="action" text="Start" > </baseBouton>
-        <button class="cust-bttn" color="" title="start" :on-press="action"></button>
-
+        <view class="boutonnade">
+          <text class="text-bouton" @press="action"> Start</text>
+        </view>
       </view>
     </view>
   </scroll-view>
@@ -55,6 +57,9 @@ export default {
   methods: {
     action() {
       this.navigation.navigate("IOSTabs");
+    },
+    test() {
+      console.log("zou");
     }
   }
 };
@@ -63,8 +68,23 @@ export default {
 <style scoped>
 @import url("https://use.typekit.net/kzn4ozu.css");
 
-.home-fond{
+.home-fond {
   position: relative;
+}
+.boutonnade {
+  display: flex;
+  background-color: #2e86ab;
+  width: 140px;
+  height: 40px;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.text-bouton {
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  width: 140px;
 }
 
 .flex {
