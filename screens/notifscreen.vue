@@ -24,11 +24,7 @@
 import Vue from "vue-native-core";
 import baseBouton from "../components/base/baseBouton";
 import headerImg from "../components/base/headerImg";
-<<<<<<< HEAD
-import parametrecompte from "./parametrecompte.vue";
-=======
 import paramètrecompte from "./paramètrecompte.vue";
->>>>>>> b508258f7ea165e223079de8d1d183be4c772147
 import mesinfoscreen from "./mesinfoscreen.vue";
 
 export default {

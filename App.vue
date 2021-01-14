@@ -10,6 +10,7 @@ import {
 } from "vue-native-router";
 
 import * as React from "react";
+import { View, Image, StyleSheet } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import register from "./screens/register.vue";
@@ -21,6 +22,8 @@ import apropos from "./screens/apropos.vue";
 import paramètrecompte from "./screens/paramètrecompte.vue";
 import notifscreen from "./screens/notifscreen.vue";
 import mesinfoscreen from "./screens/mesinfoscreen.vue";
+
+import aproposIcon from "./assets/img/profil.png";
 
 const BottomTabNavigator = createBottomTabNavigator({
   Register: {
@@ -50,7 +53,7 @@ const BottomTabNavigator = createBottomTabNavigator({
     navigationOptions: ({ navigation }) => ({
       title: ``,
       tabBarIcon: ({ tintColor, activeTintColor }) => (
-        <Icon name="users" size={30} color={tintColor} />
+        <Image style={styles.icon2} source={require("./assets/img/ico8.png")} />
       ),
       tabBarOptions: {
         activeTintColor: "#7BBC8A",
@@ -66,6 +69,28 @@ const BottomTabNavigator = createBottomTabNavigator({
         }
       }
     })
+  },
+  Apropos: {
+    screen: apropos,
+    navigationOptions: {
+      title: "",
+      tabBarIcon: ({ tintColor, activeTintColor }) => (
+        <Image style={styles.icon} source={require("./assets/img/ico10.png")} />
+      ),
+      tabBarOptions: {
+        activeTintColor: "#7BBC8A",
+        inactiveTintColor: "#FFF7F2",
+        showIcon: true,
+        style: {
+          backgroundColor: "#2C87AD",
+          borderTopWidth: 0.5,
+          borderTopColor: "#7BBC8A"
+        },
+        labelStyle: {
+          display: "none"
+        }
+      }
+    }
   },
 
   Administration: {
@@ -73,11 +98,7 @@ const BottomTabNavigator = createBottomTabNavigator({
     navigationOptions: ({ navigation }) => ({
       title: ``,
       tabBarIcon: ({ tintColor, activeTintColor }) => (
-        <MaterialCommunityIcons
-          name="database-settings"
-          size={30}
-          color={tintColor}
-        />
+        <Image style={styles.icon3} source={require("./assets/img/ico9.png")} />
       ),
       tabBarOptions: {
         activeTintColor: "#7BBC8A",
@@ -93,19 +114,15 @@ const BottomTabNavigator = createBottomTabNavigator({
         }
       }
     })
-  },
-
-<<<<<<< HEAD
-  parametrecompte: parametrecompte
-=======
-  paramètrecompte: paramètrecompte ,
->>>>>>> b508258f7ea165e223079de8d1d183be4c772147
+  }
 });
 
 const StackNavigator = createStackNavigator(
   {
     Home: Home,
-    IOSTabs: BottomTabNavigator
+    IOSTabs: BottomTabNavigator,
+    apropos: apropos,
+    notifscreen: notifscreen
   },
   {
     initialRouteName: "Home",
@@ -119,6 +136,26 @@ const StackNavigator = createStackNavigator(
 );
 
 const AppNavigator = createAppContainer(StackNavigator);
+const styles = StyleSheet.create({
+  icon: {
+    flex: 1,
+    width: 40,
+    height: 40,
+    resizeMode: "contain"
+  },
+  icon2: {
+    flex: 1,
+    width: 50,
+    height: 50,
+    resizeMode: "contain"
+  },
+  icon3: {
+    flex: 1,
+    width: 30,
+    height: 30,
+    resizeMode: "contain"
+  }
+});
 export default {
   components: { AppNavigator }
 };
@@ -126,5 +163,8 @@ export default {
 <style>
 .nav {
   background-color: #2c87ad;
+}
+.icon {
+  width: 10px;
 }
 </style>

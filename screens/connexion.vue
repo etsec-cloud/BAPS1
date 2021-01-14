@@ -22,12 +22,23 @@
             v-model="password"
           />
           <text class="mdp_lost">Mot de passe oublié</text>
-          <button class="button" title="Bouton" type="submit" id="button" color="#7EBC89"></button>
+          <!-- <button
+            class="button"
+            title="Bouton"
+            type="submit"
+            id="button"
+            color="#7EBC89"
+          ></button> -->
+          <view class="boutonnade postionAbso">
+            <text class="text-bouton" @press="action"> VALIDER</text>
+          </view>
         </view>
       </view>
 
       <view class="bottom-connexion">
-        <BaseBouton></BaseBouton>
+        <view class="boutonnade">
+          <text class="text-bouton" @press="goToRegister"> CREER</text>
+        </view>
       </view>
     </view>
   </scroll-view>
@@ -51,15 +62,15 @@ export default {
     };
   },
   methods: {
-    goToTestScreen() {
-      this.navigation.navigate("Page");
+    goToRegister() {
+      console.log("ouai");
+      this.navigation.navigate("Register");
     }
   }
 };
 </script>
 
 <style scoped>
-
 @import url("https://use.typekit.net/kzn4ozu.css");
 
 * {
@@ -69,11 +80,30 @@ export default {
   width: 100%;
   background-color: #166180;
 }
-
+.boutonnade {
+  display: flex;
+  background-color: #fff7f2;
+  width: 140px;
+  height: 40px;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  border-width: 2;
+  border-color: #17759d;
+  margin-bottom: 10;
+}
+.postionAbso {
+  position: absolute;
+  bottom: -60;
+  right: 0;
+}
 .fond-form {
   background-color: #fff7f2;
   border-bottom-right-radius: 54px;
   border-bottom-left-radius: 54px;
+  position: relative;
+  padding-bottom: 30;
+  margin-bottom: 20;
 }
 
 .form {
@@ -98,7 +128,6 @@ export default {
 }
 
 .h1 {
-
   font-size: 30px;
   text-align: center;
   margin-bottom: 10%;
@@ -109,7 +138,7 @@ export default {
   text-align: center;
 }
 
-#button{
+#button {
   width: 2px;
 }
 .bottom-connexion {

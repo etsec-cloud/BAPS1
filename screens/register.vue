@@ -31,7 +31,10 @@
       </view>
 
       <view class="bottom-register">
-        <BaseBouton text="Register"></BaseBouton>
+        <!-- <BaseBouton text="Register"></BaseBouton> -->
+        <view class="boutonnade">
+          <text class="text-bouton" @press="action"> VALIDER</text>
+        </view>
       </view>
     </view>
   </scroll-view>
@@ -71,8 +74,20 @@ export default {
 }
 .page-register {
   width: 100%;
+  background-color: #166180;
 }
-
+.boutonnade {
+  display: flex;
+  background-color: #fff7f2;
+  width: 140px;
+  height: 40px;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  border-width: 2;
+  border-color: #17759d;
+  margin-bottom: 10;
+}
 .fond-form-register {
   background-color: #fff7f2;
   padding-bottom: 50px;

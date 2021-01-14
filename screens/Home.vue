@@ -15,28 +15,14 @@
         >
         <image :source="require('../assets/img/homepagefond.png')" />
         <view class="boutonnade">
-          <text class="text-bouton" @press="action"> Start</text>
+          <text class="text-bouton" @press="action"> ÉCOUTER</text>
+        </view>
+
+        <view class="boutonnade postionAbso">
+          <text class="text-bouton" @press="action"> VOIR</text>
         </view>
       </view>
     </view>
-    <AbsoluteLayout backgroundColor="#3c495e">
-      <Label
-        text="10,10"
-        left="10"
-        top="10"
-        width="100"
-        height="100"
-        backgroundColor="#289062"
-      />
-      <Label
-        text="30,40"
-        left="30"
-        top="40"
-        width="100"
-        height="100"
-        backgroundColor="#43b883"
-      />
-    </AbsoluteLayout>
   </scroll-view>
 </template>
 
@@ -87,20 +73,28 @@ export default {
 
 .home-fond {
   position: relative;
+  margin-bottom: 30;
 }
 
 .boutonnade {
+  position: absolute;
+  bottom: 60;
   display: flex;
-  background-color: #2e86ab;
+  background-color: #fff7f2;
   width: 140px;
   height: 40px;
   border-radius: 20px;
   justify-content: center;
   align-items: center;
+  border-width: 2;
+  border-color: #17759d;
+}
+.postionAbso {
+  bottom: -10;
 }
 .text-bouton {
   text-align: center;
-  color: white;
+  color: #17759d;
   font-size: 18px;
   width: 140px;
 }
@@ -115,6 +109,8 @@ export default {
   max-width: 300px;
   font-size: 18px;
   text-align: center;
+  color: #616161;
+  line-height: 24px;
 }
 .btn {
   background-color: transparent;
