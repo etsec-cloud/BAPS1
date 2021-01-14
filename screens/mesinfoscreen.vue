@@ -20,8 +20,11 @@
       <text class="h1">Concernant Hypnofine</text>
       <text class="h3">Lire le règlement</text>
       <text class="h3">Lire les conditions générales d'utilisateur</text>
-  </view>
+
 </view>
+    <view class="footer">
+      
+    </view>
 </template>
 
 <script>
@@ -48,10 +51,10 @@ export default {
   },
   methods: {
     goToParametreScreen() {
-        this.navigation.navigate("./paramètrecompte");
+        this.navigation.navigate("paramètrecompte");
     },
     goToNotifScreen(){
-        this.navigation.navigate("./notifscreen")
+        this.navigation.navigate("notifscreen")
     },
     handleChange: function(val) {
           this.value =val;

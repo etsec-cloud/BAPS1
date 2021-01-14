@@ -43,10 +43,10 @@ export default {
   },
   methods: {
     goToParametreScreen() {
-      this.navigation.navigate("./paramètrecompte");
+      this.navigation.navigate("paramètrecompte");
     },
     goToMesInfoScreen() {
-      this.navigation.navigate("./mesinfoscreen");
+      this.navigation.navigate("mesinfoscreen");
     },
     handleChange: function(val) {
           this.value =val;

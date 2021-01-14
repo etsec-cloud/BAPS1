@@ -102,7 +102,10 @@ const BottomTabNavigator = createBottomTabNavigator({
 const StackNavigator = createStackNavigator(
   {
     Home: Home,
-    IOSTabs: BottomTabNavigator
+    IOSTabs: BottomTabNavigator,
+    paramètrecompte : paramètrecompte,
+    mesinfoscreen : mesinfoscreen,
+    notifscreen : notifscreen
   },
   {
     initialRouteName: "Home",
