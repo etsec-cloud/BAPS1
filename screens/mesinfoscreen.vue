@@ -93,6 +93,16 @@ export default {
   right: 10px;
   font-size: 30px;
 }
+.input {
+  font-size: 14px;
+  margin-top: 18%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 40px;
+  width: 90%;
+  text-align: center;
+  border-bottom-width: 1px;
+}
 .flex {
   display: flex;
   flex-direction: column;
