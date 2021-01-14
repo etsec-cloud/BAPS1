@@ -9,8 +9,8 @@
     <view class="home-fond">
       <view class="flexContainer">
         <view class="leftContainer">
-          <image :source="require('../assets/img/profil.png')" />
-          <text @press="goToMesInfoScreen">goToMesInfoScreen</text>
+      <image :source="require('../assets/img/profil.png')"/>
+      <text class="click" @press="goToMesInfoScreen">A</text>
         </view>
         <image :source="require('../assets/img/logoBAP.png')" />
       </view>
@@ -41,7 +41,6 @@ import axios from "axios";
 import backgroundUrl from "../assets/img/homepagefond.png";
 export default {
   components: {
-    baseBouton,
     headerImg
   },
   props: {
@@ -82,7 +81,13 @@ export default {
   position: relative;
   margin-bottom: 30;
 }
-
+.click{
+  opacity: 0;
+  position: absolute;
+  top:20px;
+  right: 10px;
+  font-size: 30px;
+}
 .boutonnade {
   position: absolute;
   bottom: 60;

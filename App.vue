@@ -114,7 +114,7 @@ const BottomTabNavigator = createBottomTabNavigator({
         }
       }
     })
-  }
+  },
 });
 
 const StackNavigator = createStackNavigator(
@@ -124,7 +124,7 @@ const StackNavigator = createStackNavigator(
     apropos: apropos,
     notifscreen: notifscreen,
     paramètrecompte: paramètrecompte,
-    mesinfoscreen: mesinfoscreen
+    mesinfoscreen: mesinfoscreen,
   },
   {
     initialRouteName: "Home",

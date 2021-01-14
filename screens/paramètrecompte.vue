@@ -4,7 +4,7 @@
         <view class="flexContainer">
     <view class="leftContainer">
       <image :source="require('../assets/img/profil.png')"/>
-      <text @press="goToMesInfoScreen">goToMesInfoScreen</text>
+      <text class="click" @press="goToMesInfoScreen">A</text>
     </view>
     <image :source="require('../assets/img/logoBAP.png')" />
   </view>
@@ -47,16 +47,10 @@
 
 <script>
 import Vue from "vue-native-core";
-import baseBouton from "../components/base/baseBouton";
-import headerImg from "../components/base/headerImg";
 import notifscreen from "./notifscreen.vue";
 import mesinfoscreen from "./mesinfoscreen.vue";
 
 export default {
-  components: {
-    baseBouton,
-    headerImg
-  },
   data: function() {
     return {
       value1: true,
@@ -84,6 +78,13 @@ export default {
 </script>
 
 <style scoped>
+.click{
+  opacity: 0;
+  position: absolute;
+  top:20px;
+  right: 10px;
+  font-size: 30px;
+}
 .flex {
   display: flex;
   flex-direction: column;

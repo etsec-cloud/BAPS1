@@ -3,7 +3,7 @@
       <view class="flexContainer">
     <view class="leftContainer">
       <image :source="require('../assets/img/profil.png')"/>
-      <text @press="goToMesInfoScreen">goToMesInfoScreen</text>
+      <text class="click" @press="goToMesInfoScreen">A</text>
     </view>
     <image :source="require('../assets/img/logoBAP.png')" />
   </view>
@@ -24,19 +24,35 @@
 
 <script>
 import headerImg from "../components/base/headerImg";
+import mesinfoscreen from "./mesinfoscreen.vue";
+
 export default {
   data: function() {
     return {
       text: ""
     };
   },
-  components: {
-    headerImg
+    props: {
+    navigation: {
+      type: Object,
+    },
+  },
+  methods: {
+    goToMesInfoScreen() {
+      this.navigation.navigate("mesinfoscreen");
+    },
   }
-};
+ };
 </script>
 
 <style scoped>
+.click{
+  opacity: 0;
+  position: absolute;
+  top:20px;
+  right: 10px;
+  font-size: 30px;
+}
 .page {
   width: 100%;
   background-color: #ececec;

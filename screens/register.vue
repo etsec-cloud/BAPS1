@@ -10,8 +10,8 @@
       <view class="fond-form-register">
           <view class="flexContainer">
     <view class="leftContainer">
-      <image :source="require('../assets/img/profil.png')"/>
-      <text @press="goToMesInfoScreen">goToMesInfoScreen</text>
+       <image :source="require('../assets/img/profil.png')"/>
+      <text class="click" @press="goToMesInfoScreen">A</text>
     </view>
     <image :source="require('../assets/img/logoBAP.png')" />
   </view>
@@ -58,7 +58,7 @@ export default {
       type: Object
     }
   },
-  components: { BaseBouton, headerImg },
+  components: { headerImg },
   data: function() {
     return {
       email: "",
@@ -69,6 +69,9 @@ export default {
   methods: {
     goToTestScreen() {
       this.navigation.navigate("Page");
+    },
+        goToMesInfoScreen() {
+      this.navigation.navigate("mesinfoscreen");
     }
   }
 };
@@ -77,6 +80,13 @@ export default {
 <style scoped>
 * {
   box-sizing: border-box;
+}
+.click{
+  opacity: 0;
+  position: absolute;
+  top:20px;
+  right: 10px;
+  font-size: 30px;
 }
 .page-register {
   width: 100%;

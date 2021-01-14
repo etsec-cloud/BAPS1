@@ -9,7 +9,7 @@
       <view class="flexContainer">
     <view class="leftContainer">
       <image :source="require('../assets/img/profil.png')"/>
-      <text @press="goToMesInfoScreen">goToMesInfoScreen</text>
+      <text class="click" @press="goToMesInfoScreen">A</text>
     </view>
     <image :source="require('../assets/img/logoBAP.png')" />
   </view>
@@ -95,12 +95,22 @@ export default {
   methods: {
     goToTestScreen() {
       this.navigation.navigate("Page");
+    },
+    goToMesInfoScreen() {
+      this.navigation.navigate("mesinfoscreen");
     }
   }
 };
 </script>
 
 <style scoped>
+.click{
+  opacity: 0;
+  position: absolute;
+  top:20px;
+  right: 10px;
+  font-size: 30px;
+}
 .flexContainer {
   margin: 20px 0px;
   display: flex;

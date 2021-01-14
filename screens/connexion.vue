@@ -11,7 +11,7 @@
           <view class="flexContainer">
     <view class="leftContainer">
       <image :source="require('../assets/img/profil.png')"/>
-      <text @press="goToMesInfoScreen">goToMesInfoScreen</text>
+      <text class="click" @press="goToMesInfoScreen">A</text>
     </view>
     <image :source="require('../assets/img/logoBAP.png')" />
   </view>
@@ -70,6 +70,9 @@ export default {
   methods: {
     goToRegister() {
       this.navigation.navigate("notifscreen");
+    },
+    goToMesInfoScreen() {
+      this.navigation.navigate("mesinfoscreen");
     }
   }
 };
@@ -80,6 +83,13 @@ export default {
 
 * {
   box-sizing: border-box;
+}
+.click{
+  opacity: 0;
+  position: absolute;
+  top:20px;
+  right: 10px;
+  font-size: 30px;
 }
 .page {
   width: 100%;

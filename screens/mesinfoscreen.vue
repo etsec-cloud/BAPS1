@@ -3,8 +3,8 @@
     <view class="hautdepage">
         <view class="flexContainer">
     <view class="leftContainer">
-      <image :source="require('../assets/img/profil.png')"/>
-      <text @press="goToMesInfoScreen">goToMesInfoScreen</text>
+            <image :source="require('../assets/img/profil.png')"/>
+      <text class="click" @press="goToMesInfoScreen">A</text>
     </view>
     <image :source="require('../assets/img/logoBAP.png')" />
   </view>
@@ -23,21 +23,21 @@
     <view class="basdepage">
       <text class="h1">Mes informations</text>
         <view class="form-profil">
-          <text-input class="input" placeholder="Mon nom" v-model="email" />
+          <text-input class="input" placeholder="Mon nom" v-model="Nom" />
           <text-input
             class="input"
             placeholder="Mon prénom"
-            v-model="password"
+            v-model="Prenom"
           />
           <text-input
             class="input"
             placeholder="Mon adresse mail"
-            v-model="confirm_password"
+            v-model="Mail"
           />
           <text-input
             class="input"
             placeholder="Mon mot de passe"
-            v-model="confirm_password"
+            v-model="mdp"
           />
         </view>
     </view>
@@ -54,18 +54,17 @@
 
 <script>
 import Vue from "vue-native-core";
-import baseBouton from "../components/base/baseBouton";
-import headerImg from "../components/base/headerImg";
 import paramètrecompte from "./paramètrecompte.vue";
 import notifscreen from "./notifscreen.vue";
 
 export default {
-  components: {
-    baseBouton,
-    headerImg
-  },
   data: function() {
-    return {};
+    return {
+      Nom: "",
+      Prenom: "",
+      Mail: "",
+      mdp: "",
+    };
   },
   props: {
     navigation: {
@@ -87,6 +86,13 @@ export default {
 </script>
 
 <style scoped>
+.click{
+  opacity: 0;
+  position: absolute;
+  top:20px;
+  right: 10px;
+  font-size: 30px;
+}
 .flex {
   display: flex;
   flex-direction: column;
