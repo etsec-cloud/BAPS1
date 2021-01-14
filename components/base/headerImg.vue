@@ -1,20 +1,44 @@
 <template>
   <view class="flexContainer">
     <view class="leftContainer">
-      <image :source="require('../../assets/img/profil.png')" />
+      <image :source="require('../../assets/img/profil.png')"/>
+      <text @press="goToMesInfoScreen">goToMesInfoScreen</text>
     </view>
     <image :source="require('../../assets/img/logoBAP.png')" />
   </view>
 </template>
 
 <script>
+import Vue from "vue-native-core";
+import mesinfoscreen from "../../screens/mesinfoscreen.vue";
+
 export default {
   name: "headerImg",
 
+<<<<<<< HEAD
   methods: {
     goToMesInfoScreen() {
       this.navigation.navigate("mesinfoscreen.vue");
     }
+=======
+  data : function(){
+      return {
+         
+      }
+  },
+  props: {
+    navigation: {
+      type: Object
+    }
+  },
+  methods: {
+    goToMesInfoScreen() {
+      this.navigation.navigate("mesinfoscreen");
+    },
+    handleChange: function(val) {
+          this.value =val;
+      }
+>>>>>>> 87f39a01b6986aff1e8eaa0df4a83dd0955ff6df
   }
 };
 </script>

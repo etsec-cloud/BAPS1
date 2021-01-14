@@ -8,7 +8,13 @@
   >
     <view class="page">
       <view class="fond-form">
-        <headerImg class="bgcolor"></headerImg>
+          <view class="flexContainer">
+    <view class="leftContainer">
+      <image :source="require('../assets/img/profil.png')"/>
+      <text @press="goToMesInfoScreen">goToMesInfoScreen</text>
+    </view>
+    <image :source="require('../assets/img/logoBAP.png')" />
+  </view>
         <view class="form">
           <text class="h1">LOREM IPSUM</text>
           <text class="under_h1"
@@ -170,5 +176,20 @@ export default {
 }
 .nav {
   background-color: red;
+}
+.flexContainer {
+  margin: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.leftContainer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 </style>

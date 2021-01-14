@@ -1,7 +1,13 @@
 <template>
   <view>
     <view class="hautdepage">
-      <headerImg></headerImg>
+        <view class="flexContainer">
+    <view class="leftContainer">
+      <image :source="require('../assets/img/profil.png')"/>
+      <text @press="goToMesInfoScreen">goToMesInfoScreen</text>
+    </view>
+    <image :source="require('../assets/img/logoBAP.png')" />
+  </view>
       <view class="flex">
         <image :source="require('../assets/img/profil.png')" class="ima" />
         <text class="Nom"> Prénom Nom </text>
@@ -16,13 +22,34 @@
     </view>
     <view class="basdepage">
       <text class="h1">Mes informations</text>
+        <view class="form-profil">
+          <text-input class="input" placeholder="Mon nom" v-model="email" />
+          <text-input
+            class="input"
+            placeholder="Mon prénom"
+            v-model="password"
+          />
+          <text-input
+            class="input"
+            placeholder="Mon adresse mail"
+            v-model="confirm_password"
+          />
+          <text-input
+            class="input"
+            placeholder="Mon mot de passe"
+            v-model="confirm_password"
+          />
+        </view>
     </view>
     <view>
       <text class="h1">Concernant Hypnofine</text>
       <text class="h3">Lire le règlement</text>
       <text class="h3">Lire les conditions générales d'utilisateur</text>
+
+</view>
+    <view class="footer">
+      
     </view>
-  </view>
 </template>
 
 <script>
@@ -106,5 +133,20 @@ export default {
 .h3 {
   font-size: 16px;
   margin-top: 10px;
+}
+.flexContainer {
+  margin: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.leftContainer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 </style>
