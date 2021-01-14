@@ -1,6 +1,12 @@
 <template>
   <view class="page">
-    <headerImg></headerImg>
+      <view class="flexContainer">
+    <view class="leftContainer">
+      <image :source="require('../assets/img/profil.png')"/>
+      <text @press="goToMesInfoScreen">goToMesInfoScreen</text>
+    </view>
+    <image :source="require('../assets/img/logoBAP.png')" />
+  </view>
     <view class="header">
       <view class="mise-en-ligne">
         <text>Mettre une vidéo en ligne</text>
@@ -60,5 +66,20 @@ export default {
 hr {
   width: 50vw;
   color: black;
+}
+.flexContainer {
+  margin: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.leftContainer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 </style>

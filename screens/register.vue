@@ -8,7 +8,13 @@
   >
     <view class="page-register">
       <view class="fond-form-register">
-        <headerImg class="bgcolor"></headerImg>
+          <view class="flexContainer">
+    <view class="leftContainer">
+      <image :source="require('../assets/img/profil.png')"/>
+      <text @press="goToMesInfoScreen">goToMesInfoScreen</text>
+    </view>
+    <image :source="require('../assets/img/logoBAP.png')" />
+  </view>
         <!-- <view class="header-register">
           <image
             class="logo-register"
@@ -31,7 +37,10 @@
       </view>
 
       <view class="bottom-register">
-        <BaseBouton text="Register"></BaseBouton>
+        <!-- <BaseBouton text="Register"></BaseBouton> -->
+        <view class="boutonnade">
+          <text class="text-bouton" @press="action"> VALIDER</text>
+        </view>
       </view>
     </view>
   </scroll-view>
@@ -71,8 +80,20 @@ export default {
 }
 .page-register {
   width: 100%;
+  background-color: #166180;
 }
-
+.boutonnade {
+  display: flex;
+  background-color: #fff7f2;
+  width: 140px;
+  height: 40px;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  border-width: 2;
+  border-color: #17759d;
+  margin-bottom: 10;
+}
 .fond-form-register {
   background-color: #fff7f2;
   padding-bottom: 50px;
@@ -118,5 +139,20 @@ export default {
 
 .nav {
   background-color: red;
+}
+.flexContainer {
+  margin: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.leftContainer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 </style>
