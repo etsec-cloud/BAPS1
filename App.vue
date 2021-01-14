@@ -22,7 +22,6 @@ import paramètrecompte from "./screens/paramètrecompte.vue";
 import notifscreen from "./screens/notifscreen.vue";
 import mesinfoscreen from "./screens/mesinfoscreen.vue";
 
-
 const BottomTabNavigator = createBottomTabNavigator({
   Register: {
     screen: register,

@@ -13,11 +13,30 @@
           >Hypnofine, Votre anti-douleur. Venez constater votre progression
           après une écoute . On commence ?</text
         >
+        <image :source="require('../assets/img/homepagefond.png')" />
         <view class="boutonnade">
           <text class="text-bouton" @press="action"> Start</text>
         </view>
       </view>
     </view>
+    <AbsoluteLayout backgroundColor="#3c495e">
+      <Label
+        text="10,10"
+        left="10"
+        top="10"
+        width="100"
+        height="100"
+        backgroundColor="#289062"
+      />
+      <Label
+        text="30,40"
+        left="30"
+        top="40"
+        width="100"
+        height="100"
+        backgroundColor="#43b883"
+      />
+    </AbsoluteLayout>
   </scroll-view>
 </template>
 

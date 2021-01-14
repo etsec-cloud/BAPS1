@@ -1,22 +1,23 @@
 <template>
-<view>
-  <view class="hautdepage">
-    <headerImg></headerImg>
-    <view class="flex">
-    <image :source="require('../assets/img/profil.png')" class="ima"/>
-    <text class="Nom"> Prénom Nom </text>
+  <view>
+    <view class="hautdepage">
+      <headerImg></headerImg>
+      <view class="flex">
+        <image :source="require('../assets/img/profil.png')" class="ima" />
+        <text class="Nom"> Prénom Nom </text>
         <view class="menu">
-            <text class="oui" @press="goToMesInfoScreen">Mes informations</text>
-            <text class="oui">Notifications Push</text>
-            <text class="oui" @press="goToParametreScreen">Paramètre du compte</text>
+          <text class="oui" @press="goToMesInfoScreen">Mes informations</text>
+          <text class="oui">Notifications Push</text>
+          <text class="oui" @press="goToParametreScreen"
+            >Paramètre du compte</text
+          >
         </view>
+      </view>
+    </view>
+    <view class="basdepage">
+      <text class="h1">Notif</text>
     </view>
   </view>
-    <view class="basdepage">
-        <text class="h1">Notif</text>
-    
-    </view>
-</view>
 </template>
 
 <script>
@@ -31,12 +32,10 @@ export default {
     baseBouton,
     headerImg
   },
-  data : function(){
-      return {
-         
-      }
+  data: function() {
+    return {};
   },
-    props: {
+  props: {
     navigation: {
       type: Object
     }
@@ -49,11 +48,10 @@ export default {
       this.navigation.navigate("mesinfoscreen");
     },
     handleChange: function(val) {
-          this.value =val;
-      }
+      this.value = val;
+    }
   }
 };
-
 </script>
 
 <style scoped>
@@ -68,43 +66,40 @@ export default {
   align-items: center;
   margin-top: 20px;
 }
-.menu{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    
-    
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .Nom {
-  padding-top:  40px;
+  padding-top: 40px;
 }
-.ima{
-
+.ima {
 }
-.hautdepage{
-    background-color: #b7dbc3;
+.hautdepage {
+  background-color: #b7dbc3;
 }
-.oui{
-    margin-top: 20px;
-    margin-left: 15px;
-    margin-right: 15px;
-    width: 21%;
-    text-align: center;
+.oui {
+  margin-top: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: 21%;
+  text-align: center;
 }
-.basdepage{
-    padding-top: 10px;
-    padding-left: 25px;
-    padding-right: 25px;
+.basdepage {
+  padding-top: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
-.h1{
-    font-size: 25px;
-    margin-top: 30px;
+.h1 {
+  font-size: 25px;
+  margin-top: 30px;
 }
-.h2{
-    font-size: 16px;
+.h2 {
+  font-size: 16px;
 }
-.h3{
-    font-size: 16px;
-    margin-top: 10px;
+.h3 {
+  font-size: 16px;
+  margin-top: 10px;
 }
 </style>
