@@ -8,12 +8,15 @@
   >
     <view class="home-fond">
       <headerImg></headerImg>
+      <text @press="goToMesInfoScreen"> cliquez </text>
+
       <view class="flex">
         <text class="text"
           >Hypnofine, Votre anti-douleur. Venez constater votre progression
           après une écoute . On commence ?</text
         >
         <image :source="require('../assets/img/homepagefond.png')" />
+
         <view class="boutonnade">
           <text class="text-bouton" @press="action"> ÉCOUTER</text>
         </view>
@@ -61,8 +64,8 @@ export default {
     action() {
       this.navigation.navigate("IOSTabs");
     },
-    test() {
-      console.log("zou");
+    goToMesInfoScreen() {
+      this.navigation.navigate("mesinfoscreen");
     }
   }
 };

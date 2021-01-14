@@ -47,10 +47,10 @@ export default {
   },
   methods: {
     goToParametreScreen() {
-      this.navigation.navigate("./paramètrecompte");
+      this.navigation.navigate("paramètrecompte");
     },
     goToNotifScreen() {
-      this.navigation.navigate("./notifscreen");
+      this.navigation.navigate("notifscreen");
     },
     handleChange: function(val) {
       this.value = val;

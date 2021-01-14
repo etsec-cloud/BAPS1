@@ -9,7 +9,13 @@
 
 <script>
 export default {
-  name: "headerImg"
+  name: "headerImg",
+
+  methods: {
+    goToMesInfoScreen() {
+      this.navigation.navigate("mesinfoscreen.vue");
+    }
+  }
 };
 </script>
 

@@ -122,7 +122,9 @@ const StackNavigator = createStackNavigator(
     Home: Home,
     IOSTabs: BottomTabNavigator,
     apropos: apropos,
-    notifscreen: notifscreen
+    notifscreen: notifscreen,
+    paramètrecompte: paramètrecompte,
+    mesinfoscreen: mesinfoscreen
   },
   {
     initialRouteName: "Home",

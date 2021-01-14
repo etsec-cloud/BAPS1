@@ -42,10 +42,12 @@ export default {
   },
   methods: {
     goToParametreScreen() {
-      this.navigation.navigate("./paramètrecompte");
+      console.log("oui");
+      this.navigation.navigate("paramètrecompte");
     },
     goToMesInfoScreen() {
-      this.navigation.navigate("./mesinfoscreen");
+      console.log("non");
+      this.navigation.navigate("mesinfoscreen");
     },
     handleChange: function(val) {
       this.value = val;

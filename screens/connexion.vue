@@ -63,8 +63,7 @@ export default {
   },
   methods: {
     goToRegister() {
-      console.log("ouai");
-      this.navigation.navigate("Register");
+      this.navigation.navigate("notifscreen");
     }
   }
 };
