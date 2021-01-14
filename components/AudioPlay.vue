@@ -13,7 +13,7 @@
       <view v-if="overlayVisible" class="player-overlay" :class="{ blurred: overlayBlur }" :style="`background-color: ${overlayColor}`"></view>
     </transition>
 
-    <div class="player-wrapper" ref="wrapper">
+    <view class="player-wrapper" ref="wrapper">
       <audio
           v-if="audio"
           preload="auto"
@@ -53,7 +53,7 @@
         Your browser does not support HTML5 video.
       </video>
 
-      <div class="player-controls">
+      <view class="player-controls">
         <replay-icon v-if="currentTime == duration && duration > 0" aria-label="replay" class="action action-replay" @click="replay" />
         <pause-icon v-else-if="status === 'playing'" aria-label="pause" class="action action-pause" viewBox="2 0 20 25" @click="pause" />
         <play-icon v-else aria-label="play" class="action action-play" viewBox="0 0 20 25" @click="play" />
@@ -75,15 +75,15 @@
           />
         </template>
 
-        <div class="player-tracker">
+        <view class="player-tracker">
           <span class="player-time-current" aria-label="current time">{{ currentTime | time }}</span>
-          <div class="player-progress" @click="seek">
-            <div class="player-progress-wrapper">
-              <div class="player-buffer" :style="`width: ${buffered}%`"></div>
-              <div class="player-seeker" :style="`background-color: ${color}; width: ${progress}%`"></div>
-            </div>
-            <div class="player-seeker-thumb" :style="`background-color: ${color}; left: ${progress}%`"></div>
-          </div>
+          <view class="player-progress" @click="seek">
+            <view class="player-progress-wrapper">
+              <view class="player-buffer" :style="`width: ${buffered}%`"></view>
+              <view class="player-seeker" :style="`background-color: ${color}; width: ${progress}%`"></view>
+            </view>
+            <view class="player-seeker-thumb" :style="`background-color: ${color}; left: ${progress}%`"></view>
+          </view>
           <span class="player-time-total" aria-label="duration">{{ duration | time }}</span>
 
           <template v-if="video">
@@ -109,32 +109,19 @@
                 @click="requestFullscreen"
             />
           </template>
-        </div>
-      </div>
-    </div>
+        </view>
+      </view>
+    </view>
   </view>
 </template>
 
 <script>
-import PlayIcon from '../icons/play.svg'
-import PauseIcon from '../icons/pause.svg'
-import ReplayIcon from '../icons/replay.svg'
-import FullscreenIcon from '../icons/fullscreen.svg'
-import MaximizeIcon from '../icons/maximize.svg'
-import MinimizeIcon from '../icons/minimize.svg'
-import BackwardsIcon from '../icons/backwards.svg'
-import ForwardsIcon from '../icons/forwards.svg'
+import React from "react";
+
 export default {
-  name: 'vue-player',
+  name: 'vuePlayer',
   components: {
-    PlayIcon,
-    PauseIcon,
-    ReplayIcon,
-    FullscreenIcon,
-    MaximizeIcon,
-    MinimizeIcon,
-    BackwardsIcon,
-    ForwardsIcon
+
   },
   props: {
     audio: {

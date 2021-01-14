@@ -21,7 +21,7 @@ import apropos from "./screens/apropos.vue";
 import paremètrecompte from "./screens/paramètrecompte";
 import { StatusBar } from "expo-status-bar";
 import { Platform, StyleSheet, Text, View } from "react-native";
-import AudioPlay from "./components/AudioPlay.vue";
+import audioTest from "./screens/audioTest.vue";
 
 const BottomTabNavigator = createBottomTabNavigator({
   Register: {
@@ -96,13 +96,13 @@ const BottomTabNavigator = createBottomTabNavigator({
     })
   },
 
-  AudioPlay: {
-    screen: AudioPlay,
+  AudioTest: {
+    screen: audioTest,
     navigationOptions: ({ navigation }) => ({
       title: ``,
       tabBarIcon: ({ tintColor, activeTintColor }) => (
-          <MaterialCommunityIcons
-              name="database-settings"
+          <Icon
+              name="play"
               size={30}
               color={tintColor}
           />
