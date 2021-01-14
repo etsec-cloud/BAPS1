@@ -7,19 +7,13 @@
     }"
   >
     <view class="home-fond">
-<<<<<<< HEAD
-      <headerImg></headerImg>
-      <text @press="goToMesInfoScreen"> cliquez </text>
-
-=======
-        <view class="flexContainer">
-    <view class="leftContainer">
-      <image :source="require('../assets/img/profil.png')"/>
-      <text @press="goToMesInfoScreen">goToMesInfoScreen</text>
-    </view>
-    <image :source="require('../assets/img/logoBAP.png')" />
-  </view>
->>>>>>> 87f39a01b6986aff1e8eaa0df4a83dd0955ff6df
+      <view class="flexContainer">
+        <view class="leftContainer">
+          <image :source="require('../assets/img/profil.png')" />
+          <text @press="goToMesInfoScreen">goToMesInfoScreen</text>
+        </view>
+        <image :source="require('../assets/img/logoBAP.png')" />
+      </view>
       <view class="flex">
         <text class="text"
           >Hypnofine, Votre anti-douleur. Venez constater votre progression

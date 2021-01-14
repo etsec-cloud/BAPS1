@@ -71,17 +71,10 @@ export default {
   },
   methods: {
     goToMesInfoScreen() {
-<<<<<<< HEAD
-      this.navigation.navigate("mesinfoscreen.vue");
-    },
-    goToNotifScreen(){
-        this.navigation.navigate("notifscreen.vue")
-=======
       this.navigation.navigate("mesinfoscreen");
     },
     goToNotifScreen(){
         this.navigation.navigate("notifscreen")
->>>>>>> 87f39a01b6986aff1e8eaa0df4a83dd0955ff6df
     },
     handleChange: function(val) {
       this.value = val;

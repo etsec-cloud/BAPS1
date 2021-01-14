@@ -1,13 +1,12 @@
 <template>
   <view>
     <view class="hautdepage">
-        <view class="flexContainer">
-    <view class="leftContainer">
-      <image :source="require('../assets/img/profil.png')"/>
-      <text @press="goToMesInfoScreen">goToMesInfoScreen</text>
-    </view>
-    <image :source="require('../assets/img/logoBAP.png')" />
-  </view>
+      <view class="flexContainer">
+        <view class="leftContainer">
+          <image :source="require('../assets/img/profil.png')" />
+        </view>
+        <image :source="require('../assets/img/logoBAP.png')" />
+      </view>
       <view class="flex">
         <image :source="require('../assets/img/profil.png')" class="ima" />
         <text class="Nom"> Prénom Nom </text>
@@ -48,17 +47,9 @@ export default {
   },
   methods: {
     goToParametreScreen() {
-<<<<<<< HEAD
-      console.log("oui");
       this.navigation.navigate("paramètrecompte");
     },
     goToMesInfoScreen() {
-      console.log("non");
-=======
-      this.navigation.navigate("paramètrecompte");
-    },
-    goToMesInfoScreen() {
->>>>>>> 87f39a01b6986aff1e8eaa0df4a83dd0955ff6df
       this.navigation.navigate("mesinfoscreen");
     },
     handleChange: function(val) {
