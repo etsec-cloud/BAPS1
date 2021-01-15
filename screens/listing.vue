@@ -7,7 +7,7 @@
     }"
   >
 
-    <view>
+    <view class="page">
       <view class="flexContainer">
         <view class="leftContainer">
           <image :source="require('../assets/img/profil.png')"/>
@@ -26,24 +26,105 @@
           <view class="type">
             <text class="titre-filtre">Type</text>
             <view class="bleu"></view>
+            <view class="checkboxes">
+              <CheckBox
+                  checkedColor='blue'
+                  size='2'
+                  checked={this.state.checked}
+              />
+              <text class="txt-checkbox">Vidéos</text>
+            </view>
+
+            <view class="checkboxes">
+              <CheckBox
+                  checkedColor='blue'
+                  checked={this.state.checked}
+              />
+              <text class="txt-checkbox">Audios</text>
+            </view>
 
 
           </view>
           <view class="visionnage">
-
+            <text class="titre-filtre">Visionnage</text>
+            <view class="bleu"></view>
+            <view class="checkboxes">
+              <CheckBox
+                  checkedColor='blue'
+                  checked={this.state.checked}
+              />
+              <text class="txt-checkbox">Jamais visionné</text>
+            </view>
           </view>
           <view class="trier-par">
-
+            <text class="titre-filtre">Trier par</text>
+            <view class="bleu"></view>
+            <view class="checkboxes">
+              <CheckBox
+                  checkedColor='blue'
+                  checked={this.state.checked}
+              />
+              <text class="txt-checkbox">Ordre alphabétique</text>
+            </view>
+            <view class="checkboxes">
+              <CheckBox
+                  checkedColor='blue'
+                  checked={this.state.checked}
+              />
+              <text class="txt-checkbox">Nombre de vues</text>
+            </view>
+            <view class="checkboxes">
+              <CheckBox
+                  checkedColor='blue'
+                  checked={this.state.checked}
+              />
+              <text class="txt-checkbox">Avis</text>
+            </view>
           </view>
         </view>
+      </view>
+      <view class="main-container">
+        <image :source="require('../assets/img/listingImg1.png')" class="img1" />
+        <view class="bleuXL"></view>
+        <view class="audio-player">
+          <view class="profil">
+            <image :source="require('../assets/img/profilPhoto.png')" />
+            <text class="txt-profil">Lorem ipsum dolor sit amet, consectetur adipiscin elit , sed do eiusmod tempor</text>
+          </view>
+          <view class="audio">
+            <image :source="require('../assets/img/play.png')" class="play"/>
+          </view>
+        </view>
+        <view class="bleuXL"></view>
+        <image :source="require('../assets/img/listingImg2.png')" class="img2"/>
+        <text class="detail-vid">Écoute contre la douleur N°2 - Douleurs chroniques</text>
+        <text class="date-vid">250 vues - 13 Janv. 2021</text>
+        <view class="bleuXL"></view>
+        <view class="audio-player">
+          <view class="profil">
+            <image :source="require('../assets/img/profilPhoto.png')" />
+            <text class="txt-profil">Lorem ipsum dolor sit amet, consectetur adipiscin elit , sed do eiusmod tempor</text>
+          </view>
+          <view class="audio">
+            <image :source="require('../assets/img/pause.png')" class="play"/>
+          </view>
+        </view>
+
       </view>
     </view>
   </scroll-view>
 </template>
 
 <script>
+<<<<<<< HEAD
 import React from "react";
 // import { CheckBox } from 'react-native-elements'
+=======
+
+import { CheckBox } from 'react-native-elements';
+
+
+>>>>>>> d3c75a17dec2f91f9df4aefd5ea90a31087f5c84
 
 export default {
   props: {
@@ -63,15 +144,15 @@ export default {
   },
 
 
-  data: function() {
-    return {
 
-    };
-  },
 };
 </script>
 
 <style scoped>
+.page{
+  background-color: #FFF7F2;
+}
+
 .click{
   opacity: 0;
   position: absolute;
@@ -115,4 +196,97 @@ export default {
   margin-left: 6px;
 }
 
+.bttm-filtre{
+  display: flex;
+  flex-direction: row;
+}
+
+.titre-filtre{
+  margin-top: 15px;
+  margin-bottom: 4px;
+}
+
+.bleu{
+  background-color: #166180;
+  width: 50%;
+  height: 1px;
+  margin-bottom: 10px;
+}
+
+.checkboxes{
+  display: flex;
+  flex-direction: row;
+}
+
+.main-container{
+  margin-top: 20px;
+}
+
+.bleuXL{
+  background-color: #166180;
+  width: 50%;
+  height: 1.5px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.img1{
+  margin-bottom: 100px;
+}
+
+.audio-player{
+  width:95%;
+  background-color: #ffffff;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top:5px;
+  border-radius:20px;
+  padding-bottom: 5px;
+}
+
+.profil{
+  width:90%;
+  display: flex;
+  flex-direction: row;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.txt-profil{
+  width:65%;
+  margin-top: 2px;
+  margin-left:10px;
+  font-size: 10px;
+}
+
+.play{
+  margin-top: 5px;
+  width: 88%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img2{
+  margin-top: 50px;
+}
+.detail-vid{
+  width: 85%;
+  font-size: 14px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+
+}
+
+.date-vid{
+  font-size: 8px;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
 </style>
