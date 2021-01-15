@@ -8,13 +8,13 @@
   >
     <view class="page">
       <view class="fond-form">
-          <view class="flexContainer">
-    <view class="leftContainer">
-      <image :source="require('../assets/img/profil.png')"/>
-      <text class="click" @press="goToMesInfoScreen">A</text>
-    </view>
-    <image :source="require('../assets/img/logoBAP.png')" />
-  </view>
+        <view class="flexContainer">
+          <view class="leftContainer">
+            <image :source="require('../assets/img/profil.png')" />
+            <text class="click" @press="goToMesInfoScreen">A</text>
+          </view>
+          <image :source="require('../assets/img/logoBAP.png')" />
+        </view>
         <view class="form">
           <text class="h1">SE CONNECTER</text>
           <text class="under_h1"
@@ -68,10 +68,7 @@ export default {
   },
   methods: {
     goToRegister() {
-      this.navigation.navigate("notifscreen");
-    },
-    goToMesInfoScreen() {
-      this.navigation.navigate("mesinfoscreen");
+      this.navigation.navigate("Register");
     }
   }
 };
@@ -83,10 +80,10 @@ export default {
 * {
   box-sizing: border-box;
 }
-.click{
+.click {
   opacity: 0;
   position: absolute;
-  top:20px;
+  top: 20px;
   right: 10px;
   font-size: 30px;
 }
