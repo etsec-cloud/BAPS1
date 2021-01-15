@@ -8,13 +8,13 @@
   >
     <view class="page">
       <view class="fond-form">
-          <view class="flexContainer">
-    <view class="leftContainer">
-      <image :source="require('../assets/img/profil.png')"/>
-      <text @press="goToMesInfoScreen">goToMesInfoScreen</text>
-    </view>
-    <image :source="require('../assets/img/logoBAP.png')" />
-  </view>
+        <view class="flexContainer">
+          <view class="leftContainer">
+            <image :source="require('../assets/img/profil.png')" />
+            <text class="click" @press="goToMesInfoScreen">A</text>
+          </view>
+          <image :source="require('../assets/img/logoBAP.png')" />
+        </view>
         <view class="form">
           <text class="h1">LOREM IPSUM</text>
           <text class="under_h1"
@@ -69,7 +69,7 @@ export default {
   },
   methods: {
     goToRegister() {
-      this.navigation.navigate("notifscreen");
+      this.navigation.navigate("Register");
     }
   }
 };
@@ -80,6 +80,13 @@ export default {
 
 * {
   box-sizing: border-box;
+}
+.click {
+  opacity: 0;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  font-size: 30px;
 }
 .page {
   width: 100%;

@@ -115,7 +115,7 @@ const BottomTabNavigator = createBottomTabNavigator({
         }
       }
     })
-  }
+  },
 });
 
 const StackNavigator = createStackNavigator(
@@ -126,7 +126,10 @@ const StackNavigator = createStackNavigator(
     notifscreen: notifscreen,
     paramètrecompte: paramètrecompte,
     mesinfoscreen: mesinfoscreen,
+<<<<<<< HEAD
     profil: profil
+=======
+>>>>>>> 1b5bd23a57e25644572922be3e539cde7dc43efd
   },
   {
     initialRouteName: "profil",

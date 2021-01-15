@@ -9,8 +9,7 @@
     <view class="page">
         <view class="flexContainer">
     <view class="leftContainer">
-      <image :source="require('../assets/img/profil.png')"/>
-      <text @press="goToMesInfoScreen">goToMesInfoScreen</text>
+      <image :source="require('../assets/img/profil.png')"  @press="goToMesInfoScreen"/>
     </view>
     <image :source="require('../assets/img/logoBAP.png')" />
   </view>
@@ -51,10 +50,27 @@ export default {
   components: {
     headerImg,
   },
+      props: {
+    navigation: {
+      type: Object,
+    },
+  },
+  methods: {
+    goToMesInfoScreen() {
+      this.navigation.navigate("mesinfoscreen");
+    },
+  }
 };
 </script>
 
 <style scoped>
+.click{
+  opacity: 0;
+  position: absolute;
+  top:20px;
+  right: 10px;
+  font-size: 30px;
+}
 .flex {
   margin-left: 10px;
   display: flex;
