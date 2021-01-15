@@ -16,10 +16,9 @@
     <image :source="require('../assets/img/logoBAP.png')" />
   </view>
         <view class="form">
-          <text class="h1">LOREM IPSUM</text>
+          <text class="h1">SE CONNECTER</text>
           <text class="under_h1"
-            >Lorem ipsum dolor sit amet, consectetur adipiscin elit , sed do
-            eiusmod tempor</text
+            >Pour continuer à visionner ou écouter les contenus proposés, il suffit de quelques click !</text
           >
           <text-input class="input" placeholder="Votre mail" v-model="email" />
           <text-input
@@ -138,9 +137,7 @@ export default {
   margin-bottom: 50px;
 }
 
-.h1,
-.under_h1 {
-}
+
 
 .h1 {
   font-size: 30px;

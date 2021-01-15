@@ -104,8 +104,6 @@ export default {
 .Nom {
   padding-top: 40px;
 }
-.ima {
-}
 .hautdepage {
   background-color: #b7dbc3;
 }

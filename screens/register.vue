@@ -21,6 +21,7 @@
             :source="require('../assets/img/logoBAP.png')"
           />
         </view> -->
+        <text class="h1">Inscription</text>
         <view class="form-register">
           <text-input class="input" placeholder="Votre mail" v-model="email" />
           <text-input
@@ -164,5 +165,11 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+}
+.h1 {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 10%;
+  color: #616161;
 }
 </style>

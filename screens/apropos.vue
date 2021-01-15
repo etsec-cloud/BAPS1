@@ -65,7 +65,7 @@
 
       <view class="mini-container flexColCenter">
         <text class="titre">Qui suis-je ?</text>
-        <image :source="require('../assets/img/bannierexemple.png')" />
+        <image :source="require('../assets/img/yannphoto.png')" />
         <text class="alignText text">
           Diplomé de HEC, Hypnothérapeute certifié depuis 2013, fondateur en
           2015 d’HypnoHome et membre de l’Institut Parisien du Dos depuis 2016.

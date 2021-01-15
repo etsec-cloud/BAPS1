@@ -1,4 +1,11 @@
 <template>
+<scroll-view
+    :content-container-style="{
+      contentContainer: {
+        paddingVertical: 20
+      }
+    }"
+  >
   <view>
     <view class="hautdepage">
         <view class="flexContainer">
@@ -23,33 +30,85 @@
     <view class="basdepage">
       <text class="h1">Mes informations</text>
         <view class="form-profil">
+          <view class="flexe2">
+          <image :source="require('../assets/img/edit.png')" />
           <text-input class="input" placeholder="Mon nom" v-model="Nom" />
-          <text-input
-            class="input"
-            placeholder="Mon prénom"
-            v-model="Prenom"
-          />
-          <text-input
-            class="input"
-            placeholder="Mon adresse mail"
-            v-model="Mail"
-          />
-          <text-input
-            class="input"
-            placeholder="Mon mot de passe"
-            v-model="mdp"
-          />
+          </view>
+          <view class="flexe2">
+          <image :source="require('../assets/img/edit.png')" />
+          <text-input class="input" placeholder="Mon prénom" v-model="Prenom"/>
+          </view>
+          <view class="flexe2">
+          <image :source="require('../assets/img/edit.png')" />
+          <text-input class="input" placeholder="Mon adresse mail" v-model="Mail"/>
+          </view>
+          <view class="flexe2">
+          <image :source="require('../assets/img/edit.png')" />
+          <text-input class="input" placeholder="Mon mot de passe" v-model="mdp"/>
+          </view>
+        <view class="enregistrer"> 
+      <text class="enr">Enregitrer</text>
+    </view>
         </view>
+        <text class="h2">Pour nous aider à vous proposer un contenu personalisé</text>
+      <view class="flexe">
+      <view class="flex2">
+        <view class="flexe2">
+          <switch v-model="doulchr" />
+          <text class="h3">Chroniques</text>
+        </view>
+        <view class="flexe2">
+          <switch v-model="doulomb" />
+          <text class="h3">Lombaires</text>
+        </view>
+        <view class="flexe2">
+          <switch v-model="doulest" />
+          <text class="h3">Estomac</text>
+        </view>
+        <view class="flexe2">
+          <switch v-model="doulmig" />
+          <text class="h3">Migraine</text>
+        </view>
+        <view class="flexe2">
+          <switch v-model="deptab" />
+          <text class="h3">Dépendance tabac</text>
+        </view>
+        
+      </view>
+    
+      <view class="flex2">
+        <view class="flexe2">
+          <switch v-model="doulmusc" />
+          <text class="h3">Douleur musculaires</text>
+        </view>
+        <view class="flexe2">
+          <switch v-model="doulintes" />
+          <text class="h3">Intestins</text>
+        </view>
+        <view class="flexe2">
+          <switch v-model="doulpostopé" />
+          <text class="h3">Post-opératoire</text>
+        </view>
+        <view class="flexe2">
+          <switch v-model="stress" />
+          <text class="h3">Stess et anxiété</text>
+        </view>
+        <view class="flexe2">
+          <switch v-model="priseparole" />
+          <text class="h3">Prise de la parole</text>
+        </view>
+      </view>
     </view>
-    <view>
-      <text class="h1">Concernant Hypnofine</text>
-      <text class="h3">Lire le règlement</text>
-      <text class="h3">Lire les conditions générales d'utilisateur</text>
-
+    <view class="enregistrer"> 
+      <text class="enr">Enregitrer</text>
+    </view>
+    <view class="rouge">
+      <text class="supr">Déconnexion</text>
+      <text class="supr">Supprimer mon compte</text>
+    </view>
+    </view> 
 </view>
-    <view class="footer">
-      
-    </view>
+</scroll-view>
 </template>
 
 <script>
@@ -64,6 +123,16 @@ export default {
       Prenom: "",
       Mail: "",
       mdp: "",
+      doulchr: false,
+      doulomb: true,
+      doulest: false,
+      doulmig:false,
+      deptab:false,
+      doulmusc : false,
+      doulintes : false,
+      doulpostopé : true,
+      stress: false,
+      priseparole: true,
     };
   },
   props: {
@@ -108,11 +177,22 @@ export default {
   flex-direction: column;
   align-items: center;
 }
+.flex2 {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
 .flexe {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-top: 20px;
+}
+.flexe2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
 }
 .menu {
   display: flex;
@@ -122,8 +202,7 @@ export default {
 .Nom {
   padding-top: 40px;
 }
-.ima {
-}
+
 .hautdepage {
   background-color: #b7dbc3;
 }
@@ -144,10 +223,10 @@ export default {
   margin-top: 30px;
 }
 .h2 {
-  font-size: 16px;
+  margin-top: 30px;
 }
 .h3 {
-  font-size: 16px;
+  font-size: 12px;
   margin-top: 10px;
 }
 .flexContainer {
@@ -164,5 +243,27 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+}
+.supr{
+  color: red;
+}
+.rouge{
+  margin-top: 30px ;
+}
+.enregistrer{
+  margin-top: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 31%;
+  position: relative;
+  left: 69%;
+  border-width: 1px;
+  border-color: #17759D;
+
+}
+.enr{
+  color: #17759D;
 }
 </style>
