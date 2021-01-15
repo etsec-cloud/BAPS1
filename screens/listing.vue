@@ -26,10 +26,7 @@
           <view class="type">
             <text class="titre-filtre">Type</text>
             <view class="bleu"></view>
-            <CheckBox
-                title='Click Here'
-                checked={this.state.checked}
-            />
+
 
           </view>
           <view class="visionnage">
