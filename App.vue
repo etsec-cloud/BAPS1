@@ -22,6 +22,7 @@ import apropos from "./screens/apropos.vue";
 import paramètrecompte from "./screens/paramètrecompte.vue";
 import notifscreen from "./screens/notifscreen.vue";
 import mesinfoscreen from "./screens/mesinfoscreen.vue";
+import profil from "./screens/Profil.vue";
 
 import aproposIcon from "./assets/img/profil.png";
 
@@ -124,10 +125,11 @@ const StackNavigator = createStackNavigator(
     apropos: apropos,
     notifscreen: notifscreen,
     paramètrecompte: paramètrecompte,
-    mesinfoscreen: mesinfoscreen
+    mesinfoscreen: mesinfoscreen,
+    profil: profil
   },
   {
-    initialRouteName: "Home",
+    initialRouteName: "profil",
 
     defaultNavigationOptions: {
       headerStyle: {
