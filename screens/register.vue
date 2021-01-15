@@ -8,13 +8,13 @@
   >
     <view class="page-register">
       <view class="fond-form-register">
-          <view class="flexContainer">
-    <view class="leftContainer">
-       <image :source="require('../assets/img/profil.png')"/>
-      <text class="click" @press="goToMesInfoScreen">A</text>
-    </view>
-    <image :source="require('../assets/img/logoBAP.png')" />
-  </view>
+        <view class="flexContainer">
+          <view class="leftContainer">
+            <image :source="require('../assets/img/profil.png')" />
+            <text class="click" @press="goToMesInfoScreen">A</text>
+          </view>
+          <image :source="require('../assets/img/logoBAP.png')" />
+        </view>
         <!-- <view class="header-register">
           <image
             class="logo-register"
@@ -39,7 +39,7 @@
       <view class="bottom-register">
         <!-- <BaseBouton text="Register"></BaseBouton> -->
         <view class="boutonnade">
-          <text class="text-bouton" @press="action"> VALIDER</text>
+          <text class="text-bouton" @press="postNow"> VALIDER</text>
         </view>
       </view>
     </view>
@@ -51,6 +51,7 @@ import Vue from "vue-native-core";
 import { VueNativeBase } from "native-base";
 import BaseBouton from "../components/base/baseBouton";
 import headerImg from "../components/base/headerImg";
+import axios from "axios";
 
 export default {
   props: {
@@ -70,8 +71,18 @@ export default {
     goToTestScreen() {
       this.navigation.navigate("Page");
     },
-        goToMesInfoScreen() {
+    goToMesInfoScreen() {
       this.navigation.navigate("mesinfoscreen");
+    },
+    postNow() {
+      axios.post("http://192.168.1.57:3000/users", {
+        body: {
+          user: {
+            mdp: "100931",
+            email: "john@example.com"
+          }
+        }
+      });
     }
   }
 };
@@ -81,10 +92,10 @@ export default {
 * {
   box-sizing: border-box;
 }
-.click{
+.click {
   opacity: 0;
   position: absolute;
-  top:20px;
+  top: 20px;
   right: 10px;
   font-size: 30px;
 }
