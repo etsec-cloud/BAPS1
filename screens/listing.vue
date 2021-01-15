@@ -31,6 +31,8 @@
                   checkedColor='blue'
                   size='2'
                   checked={this.state.checked}
+                  v-model="video"
+                  
               />
               <text class="txt-checkbox">Vidéos</text>
             </view>
@@ -39,6 +41,7 @@
               <CheckBox
                   checkedColor='blue'
                   checked={this.state.checked}
+                  v-model="audio"
               />
               <text class="txt-checkbox">Audios</text>
             </view>
@@ -52,6 +55,7 @@
               <CheckBox
                   checkedColor='blue'
                   checked={this.state.checked}
+                  v-model="jamaisvu"
               />
               <text class="txt-checkbox">Jamais visionné</text>
             </view>
@@ -63,6 +67,7 @@
               <CheckBox
                   checkedColor='blue'
                   checked={this.state.checked}
+                  v-model="ordrealph"
               />
               <text class="txt-checkbox">Ordre alphabétique</text>
             </view>
@@ -70,6 +75,7 @@
               <CheckBox
                   checkedColor='blue'
                   checked={this.state.checked}
+                  v-model="nbvue"
               />
               <text class="txt-checkbox">Nombre de vues</text>
             </view>
@@ -77,6 +83,7 @@
               <CheckBox
                   checkedColor='blue'
                   checked={this.state.checked}
+                  v-model="avis"
               />
               <text class="txt-checkbox">Avis</text>
             </view>
@@ -116,17 +123,20 @@
 </template>
 
 <script>
-<<<<<<< HEAD
-import React from "react";
-// import { CheckBox } from 'react-native-elements'
-=======
 
-import { CheckBox } from 'react-native-elements';
-
-
->>>>>>> d3c75a17dec2f91f9df4aefd5ea90a31087f5c84
+// import { CheckBox } from 'react-native-elements';
 
 export default {
+  data: function(){
+  return{
+    video : true,
+    audio : true,
+    jamaisvu : true,
+    ordrealph :true,
+    nbvue : true,
+    avis : true
+  }
+  },
   props: {
     navigation: {
       type: Object
@@ -140,7 +150,9 @@ export default {
     goToMesInfoScreen() {
       this.navigation.navigate("mesinfoscreen");
     },
-
+      handleChange: function(val) {
+      this.value = val;
+    }
   },
 
 

@@ -77,6 +77,8 @@ export default {
 <style scoped>
 @import url("https://use.typekit.net/kzn4ozu.css");
 
+@import url("https://use.typekit.net/nqr2ibi.css%22");
+
 * {
   box-sizing: border-box;
 }
