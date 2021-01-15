@@ -71,10 +71,7 @@ export default {
     },
 
     play(index) {
-      document.getElementById(this.currentAudioId[index]).play();
-    },
-    pause(index) {
-      document.getElementById(this.currentAudioId[index]).pause();
+      this.currentAudioId[index].play();
     }
   },
 

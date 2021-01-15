@@ -1,112 +1,162 @@
 <template>
   <view
-      class="player"
-      :class="{
-			'audio-player': audio,
-			'video-player': video,
-			[`status-${status}`]: true,
-			'fullscreen-active': fullscreenActive,
-			theater
-		}"
+    class="player"
+    :class="{
+      'audio-player': audio,
+      'video-player': video,
+      [`status-${status}`]: true,
+      'fullscreen-active': fullscreenActive,
+      theater
+    }"
   >
     <transition name="fade">
-      <view v-if="overlayVisible" class="player-overlay" :class="{ blurred: overlayBlur }" :style="`background-color: ${overlayColor}`"></view>
+      <view
+        v-if="overlayVisible"
+        class="player-overlay"
+        :class="{ blurred: overlayBlur }"
+        :style="`background-color: ${overlayColor}`"
+      ></view>
     </transition>
 
     <view class="player-wrapper" ref="wrapper">
       <audio
-          v-if="audio"
-          preload="auto"
-          :autoplay="autoplay"
-          :loop="loop"
-          @progress="progressListener"
-          @loadeddata="loaded"
-          @timeupdate="timeUpdate"
-          @play="playPause"
-          @pause="playPause"
-          @error="error"
-          class="media"
-          ref="player"
+        v-if="audio"
+        preload="auto"
+        :autoplay="autoplay"
+        :loop="loop"
+        @progress="progressListener"
+        @loadeddata="loaded"
+        @timeupdate="timeUpdate"
+        @play="playPause"
+        @pause="playPause"
+        @error="error"
+        class="media"
+        ref="player"
       >
-        <source v-for="(src, type) of sources" :src="src" :type="type" :key="type" />
+        <source
+          v-for="(src, type) of sources"
+          :src="src"
+          :type="type"
+          :key="type"
+        />
         Your browser does not support HTML5 audio.
       </audio>
 
       <video
-          v-if="video"
-          :width="videoWidth"
-          :height="videoHeight"
-          preload="auto"
-          :autoplay="autoplay"
-          :loop="loop"
-          :poster="poster"
-          @progress="progressListener"
-          @loadeddata="loaded"
-          @timeupdate="timeUpdate"
-          @play="playPause"
-          @pause="playPause"
-          @error="error"
-          class="media"
-          ref="player"
+        v-if="video"
+        :width="videoWidth"
+        :height="videoHeight"
+        preload="auto"
+        :autoplay="autoplay"
+        :loop="loop"
+        :poster="poster"
+        @progress="progressListener"
+        @loadeddata="loaded"
+        @timeupdate="timeUpdate"
+        @play="playPause"
+        @pause="playPause"
+        @error="error"
+        class="media"
+        ref="player"
       >
-        <source v-for="(src, type) of sources" :src="src" :type="type" :key="type" />
+        <source
+          v-for="(src, type) of sources"
+          :src="src"
+          :type="type"
+          :key="type"
+        />
         Your browser does not support HTML5 video.
       </video>
 
       <view class="player-controls">
-        <replay-icon v-if="currentTime == duration && duration > 0" aria-label="replay" class="action action-replay" @click="replay" />
-        <pause-icon v-else-if="status === 'playing'" aria-label="pause" class="action action-pause" viewBox="2 0 20 25" @click="pause" />
-        <play-icon v-else aria-label="play" class="action action-play" viewBox="0 0 20 25" @click="play" />
+        <replay-icon
+          v-if="currentTime == duration && duration > 0"
+          aria-label="replay"
+          class="action action-replay"
+          @click="replay"
+        />
+        <pause-icon
+          v-else-if="status === 'playing'"
+          aria-label="pause"
+          class="action action-pause"
+          viewBox="2 0 20 25"
+          @click="pause"
+        />
+        <play-icon
+          v-else
+          aria-label="play"
+          class="action action-play"
+          viewBox="0 0 20 25"
+          @click="play"
+        />
 
         <template v-if="video">
           <backwards-icon
-              v-if="status === 'playing'"
-              aria-label="back ten seconds"
-              class="action action-backwards"
-              viewBox="0 0 20 25"
-              @click="backwards"
+            v-if="status === 'playing'"
+            aria-label="back ten seconds"
+            class="action action-backwards"
+            viewBox="0 0 20 25"
+            @click="backwards"
           />
           <forwards-icon
-              v-if="status === 'playing'"
-              aria-label="forward ten seconds"
-              class="action action-forwards"
-              viewBox="0 0 20 25"
-              @click="forwards"
+            v-if="status === 'playing'"
+            aria-label="forward ten seconds"
+            class="action action-forwards"
+            viewBox="0 0 20 25"
+            @click="forwards"
           />
         </template>
 
         <view class="player-tracker">
-          <span class="player-time-current" aria-label="current time">{{ currentTime | time }}</span>
+          <span class="player-time-current" aria-label="current time">{{
+            currentTime | time
+          }}</span>
           <view class="player-progress" @click="seek">
             <view class="player-progress-wrapper">
               <view class="player-buffer" :style="`width: ${buffered}%`"></view>
-              <view class="player-seeker" :style="`background-color: ${color}; width: ${progress}%`"></view>
+              <view
+                class="player-seeker"
+                :style="`background-color: ${color}; width: ${progress}%`"
+              ></view>
             </view>
-            <view class="player-seeker-thumb" :style="`background-color: ${color}; left: ${progress}%`"></view>
+            <view
+              class="player-seeker-thumb"
+              :style="`background-color: ${color}; left: ${progress}%`"
+            ></view>
           </view>
-          <span class="player-time-total" aria-label="duration">{{ duration | time }}</span>
+          <span class="player-time-total" aria-label="duration">{{
+            duration | time
+          }}</span>
 
           <template v-if="video">
             <maximize-icon
-                v-if="!fullscreenActive && !autoFullscreen && fullscreenOption !== 'native'"
-                aria-label="toggle fullscreen"
-                class="action action-fullscreen"
-                viewBox="0 0 20 25"
-                @click="toggleFullscreen"
+              v-if="
+                !fullscreenActive &&
+                  !autoFullscreen &&
+                  fullscreenOption !== 'native'
+              "
+              aria-label="toggle fullscreen"
+              class="action action-fullscreen"
+              viewBox="0 0 20 25"
+              @click="toggleFullscreen"
             />
             <minimize-icon
-                v-else-if="fullscreenActive && !autoFullscreen && fullscreenOption !== 'native'"
-                aria-label="toggle fullscreen"
-                class="action action-fullscreen"
-                viewBox="0 0 20 25"
-                @click="toggleFullscreen"
+              v-else-if="
+                fullscreenActive &&
+                  !autoFullscreen &&
+                  fullscreenOption !== 'native'
+              "
+              aria-label="toggle fullscreen"
+              class="action action-fullscreen"
+              viewBox="0 0 20 25"
+              @click="toggleFullscreen"
             />
             <fullscreen-icon
-                v-if="!autoFullscreen && fullscreenOption !== 'scale'"
-                aria-label="toggle fullscreen"
-                class="action action-fullscreen"
-                viewBox="0 0 20 25"
-                @click="requestFullscreen"
+              v-if="!autoFullscreen && fullscreenOption !== 'scale'"
+              aria-label="toggle fullscreen"
+              class="action action-fullscreen"
+              viewBox="0 0 20 25"
+              @click="requestFullscreen"
             />
           </template>
         </view>
@@ -119,10 +169,8 @@
 import React from "react";
 
 export default {
-  name: 'vuePlayer',
-  components: {
-
-  },
+  name: "vuePlayer",
+  components: {},
   props: {
     audio: {
       type: Boolean,
@@ -137,11 +185,11 @@ export default {
     },
     videoWidth: {
       type: String,
-      default: '100%'
+      default: "100%"
     },
     videoHeight: {
       type: String,
-      default: 'auto'
+      default: "auto"
     },
     autoplay: {
       type: Boolean,
@@ -156,7 +204,7 @@ export default {
     },
     color: {
       type: String,
-      default: '#2f96fd'
+      default: "#2f96fd"
     },
     exclusive: {
       type: Boolean,
@@ -172,11 +220,11 @@ export default {
     },
     overlayColor: {
       type: String,
-      default: '#000000e6'
+      default: "#000000e6"
     },
     fullscreen: {
       type: String,
-      default: 'both'
+      default: "both"
     },
     autoFullscreen: {
       type: Boolean,
@@ -189,170 +237,186 @@ export default {
   },
   data() {
     return {
-      status: 'loading',
+      status: "loading",
       currentTime: 0,
       duration: 0,
       buffered: 0,
       progress: 0,
       fullscreenActive: false
-    }
+    };
   },
   computed: {
     fullscreenOption() {
-      const ua = navigator.userAgent
-      const isMobile = /Android|webOS|iPhone|iPad|iPod/i.test(ua)
-      if (isMobile) return 'native'
-      else return this.fullscreen
+      const ua = navigator.userAgent;
+      const isMobile = /Android|webOS|iPhone|iPad|iPod/i.test(ua);
+      if (isMobile) return "native";
+      else return this.fullscreen;
     },
     overlayVisible() {
-      if (this.theater === 'fullscreen' && this.fullscreenActive) {
-        return true
-      } else if (this.theater === true && (status === 'playing' || this.fullscreenActive)) {
-        return true
+      if (this.theater === "fullscreen" && this.fullscreenActive) {
+        return true;
+      } else if (
+        this.theater === true &&
+        (status === "playing" || this.fullscreenActive)
+      ) {
+        return true;
       } else {
-        return false
+        return false;
       }
     }
   },
   methods: {
     progressListener(e) {
-      const player = e.target
-      const duration = player.duration
+      const player = e.target;
+      const duration = player.duration;
       if (duration > 0) {
         for (let i = 0; i < player.buffered.length; i++) {
-          if (player.buffered.start(player.buffered.length - 1 - i) < player.currentTime) {
-            this.buffered = (player.buffered.end(player.buffered.length - 1 - i) / duration) * 100
-            break
+          if (
+            player.buffered.start(player.buffered.length - 1 - i) <
+            player.currentTime
+          ) {
+            this.buffered =
+              (player.buffered.end(player.buffered.length - 1 - i) / duration) *
+              100;
+            break;
           }
         }
       }
     },
     loaded(e) {
-      const target = e.target
+      const target = e.target;
       if (target.readyState >= 2) {
-        this.status = 'loaded'
-        this.duration = parseInt(target.duration)
-        if (this.autoplay) this.play()
-        return this.autoplay
+        this.status = "loaded";
+        this.duration = parseInt(target.duration);
+        if (this.autoplay) this.play();
+        return this.autoplay;
       } else {
-        this.error(e)
+        this.error(e);
       }
     },
     error(e) {
       switch (e.target.error.code) {
         case e.target.error.MEDIA_ERR_ABORTED:
-          throw new Error('You aborted the video playback.')
+          throw new Error("You aborted the video playback.");
         case e.target.error.MEDIA_ERR_NETWORK:
-          throw new Error('A network error caused the audio download to fail.')
+          throw new Error("A network error caused the audio download to fail.");
         case e.target.error.MEDIA_ERR_DECODE:
           throw new Error(
-              'The audio playback was aborted due to a corruption problem or because the video used features your browser did not support.'
-          )
+            "The audio playback was aborted due to a corruption problem or because the video used features your browser did not support."
+          );
         case e.target.error.MEDIA_ERR_SRC_NOT_SUPPORTED:
-          throw new Error('The video audio not be loaded, either because the server or network failed or because the format is not supported.')
+          throw new Error(
+            "The video audio not be loaded, either because the server or network failed or because the format is not supported."
+          );
         default:
-          throw new Error('An unknown error occurred.')
+          throw new Error("An unknown error occurred.");
       }
     },
     timeUpdate(e) {
-      const target = e.target
-      this.currentTime = parseInt(target.currentTime)
-      this.progress = (this.currentTime / this.duration) * 100
-      if (target.playing) this.status = 'playing'
+      const target = e.target;
+      this.currentTime = parseInt(target.currentTime);
+      this.progress = (this.currentTime / this.duration) * 100;
+      if (target.playing) this.status = "playing";
     },
     play() {
-      this.$refs.player.play()
+      this.$refs.player.play();
     },
     pause() {
-      this.$refs.player.pause()
+      this.$refs.player.pause();
     },
     playPause(e) {
-      if (e.type === 'pause') {
-        this.status = 'paused'
-      } else if (e.type === 'play') {
-        if (this.exclusive) {
-          const players = document.getElementsByClassName('player status-playing')
-          players.forEach(player => player.getElementsByClassName('media')[0].pause())
-        }
-        this.status = 'playing'
+      if (e.type === "pause") {
+        this.status = "paused";
+      } else if (e.type === "play") {
+        // if (this.exclusive) {
+        //   players.forEach(player => player.getElementsByClassName('media')[0].pause())
+        // }
+        this.status = "playing";
       }
       if (this.autoFullscreen) {
-        if (this.fullscreenOption === 'native') this.requestFullscreen()
-        else this.toggleFullscreen()
+        if (this.fullscreenOption === "native") this.requestFullscreen();
+        else this.toggleFullscreen();
       }
     },
     replay() {
-      this.$refs.player.pause()
-      this.$refs.player.currentTime = 0
-      this.$refs.player.play()
+      this.$refs.player.pause();
+      this.$refs.player.currentTime = 0;
+      this.$refs.player.play();
     },
     seek(e) {
-      const el = e.target.classList.contains('player-progress') ? e.target : e.target.parentNode
-      const rect = el.getBoundingClientRect()
-      const seekPos = (e.clientX - rect.left) / rect.width
-      this.$refs.player.currentTime = parseInt(this.duration * seekPos)
+      const el = e.target.classList.contains("player-progress")
+        ? e.target
+        : e.target.parentNode;
+      const rect = el.getBoundingClientRect();
+      const seekPos = (e.clientX - rect.left) / rect.width;
+      this.$refs.player.currentTime = parseInt(this.duration * seekPos);
     },
     requestFullscreen() {
-      const player = this.$refs.player
+      const player = this.$refs.player;
       if (player.requestFullscreen) {
-        player.requestFullscreen()
+        player.requestFullscreen();
       } else if (player.mozRequestFullScreen) {
-        player.mozRequestFullScreen()
+        player.mozRequestFullScreen();
       } else if (player.webkitRequestFullScreen) {
-        player.webkitRequestFullScreen()
+        player.webkitRequestFullScreen();
       }
     },
     toggleFullscreen() {
-      const wrapper = this.$refs.wrapper
-      const player = this.$refs.player
+      const wrapper = this.$refs.wrapper;
+      const player = this.$refs.player;
       if (this.fullscreenActive) {
-        wrapper.style.transform = ''
+        wrapper.style.transform = "";
       } else {
-        const $viewport = this.viewport.call()
-        let viewport
+        const $viewport = this.viewport.call();
+        let viewport;
         if ($viewport instanceof Window) {
           viewport = {
             width: window.innerWidth,
             height: window.innerHeight
-          }
+          };
         } else {
-          viewport = $viewport.getBoundingClientRect()
+          viewport = $viewport.getBoundingClientRect();
         }
-        const playerRect = player.getBoundingClientRect()
-        const scale = Math.min(viewport.width / player.offsetWidth, viewport.height / player.offsetHeight) * 0.85
-        let centerX = viewport.width / 2 - (playerRect.width * scale) / 2 - playerRect.left
-        let centerY = viewport.height / 2 - (playerRect.height * scale) / 2 - playerRect.top
+        const playerRect = player.getBoundingClientRect();
+        const scale =
+          Math.min(
+            viewport.width / player.offsetWidth,
+            viewport.height / player.offsetHeight
+          ) * 0.85;
+        let centerX =
+          viewport.width / 2 - (playerRect.width * scale) / 2 - playerRect.left;
+        let centerY =
+          viewport.height / 2 -
+          (playerRect.height * scale) / 2 -
+          playerRect.top;
         if ($viewport instanceof HTMLElement) {
-          centerX += viewport.left
-          centerY += viewport.top
+          centerX += viewport.left;
+          centerY += viewport.top;
         }
-        wrapper.style.transform = `translate(${centerX}px, ${centerY}px) scale(${scale})`
+        wrapper.style.transform = `translate(${centerX}px, ${centerY}px) scale(${scale})`;
       }
-      this.fullscreenActive = !this.fullscreenActive
+      this.fullscreenActive = !this.fullscreenActive;
     },
     backwards($event, seconds = 10) {
-      this.$refs.player.currentTime -= seconds
+      this.$refs.player.currentTime -= seconds;
     },
     forwards($event, seconds = 10) {
-      this.$refs.player.currentTime += seconds
+      this.$refs.player.currentTime += seconds;
     }
   },
   filters: {
     time: function(seconds) {
-      if (!seconds) return '0:00'
-      const dt = new Date(seconds * 1000)
-      let time = dt.toISOString().substring(11, 19)
+      if (!seconds) return "0:00";
+      const dt = new Date(seconds * 1000);
+      let time = dt.toISOString().substring(11, 19);
       if (dt.getUTCHours() == 0) {
-        time = time.slice(3)
-        if (dt.getUTCMinutes() < 10) time = time.slice(1)
+        time = time.slice(3);
+        if (dt.getUTCMinutes() < 10) time = time.slice(1);
       }
-      return time
+      return time;
     }
   }
-}
+};
 </script>
 
-
-<style scoped>
-
-</style>
+<style scoped></style>

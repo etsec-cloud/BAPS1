@@ -10,7 +10,6 @@ import {
 } from "vue-native-router";
 
 import * as React from "react";
-import Vue from "nativescript-vue";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import register from "./screens/register.vue";
@@ -22,8 +21,7 @@ import apropos from "./screens/apropos.vue";
 import paremètrecompte from "./screens/paramètrecompte";
 import { StatusBar } from "expo-status-bar";
 import { Platform, StyleSheet, Text, View } from "react-native";
-import audioTest from "./screens/audioTest.vue";
-
+import audio from "./screens/audio.vue";
 const BottomTabNavigator = createBottomTabNavigator({
   Register: {
     screen: register,
@@ -98,7 +96,7 @@ const BottomTabNavigator = createBottomTabNavigator({
   },
 
   AudioTest: {
-    screen: audioTest,
+    screen: audio,
     navigationOptions: ({ navigation }) => ({
       title: ``,
       tabBarIcon: ({ tintColor, activeTintColor }) => (
