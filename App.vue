@@ -10,7 +10,7 @@ import {
 } from "vue-native-router";
 
 import * as React from "react";
-import Vue from 'nativescript-vue';
+import Vue from "nativescript-vue";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import register from "./screens/register.vue";
@@ -102,11 +102,7 @@ const BottomTabNavigator = createBottomTabNavigator({
     navigationOptions: ({ navigation }) => ({
       title: ``,
       tabBarIcon: ({ tintColor, activeTintColor }) => (
-          <Icon
-              name="play"
-              size={30}
-              color={tintColor}
-          />
+        <Icon name="play" size={30} color={tintColor} />
       ),
       tabBarOptions: {
         activeTintColor: "#7BBC8A",

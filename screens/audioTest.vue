@@ -1,21 +1,25 @@
 <template>
   <view class="home" style="margin-top: 150px;">
-    <view v-for="(item, index) in urlArray" :class="'demo-' + index">
+    <view
+      v-for="(item, index) in urlArray"
+      :key="index"
+      :class="'demo-' + index"
+    >
       <vue-audio-native
-          size="default"
-          :url="index == 0 ? url : item"
-          :showCurrentTime="showCurrentTime"
-          :showControls="showControls"
-          :showVolume="showVolume"
-          :showDownload="showDownload"
-          :autoplay="autoplay"
-          :hint="hint"
-          :waitBuffer="waitBuffer"
-          :downloadName="downloadName"
-          @on-change="change"
-          @on-timeupdate="timeupdate"
-          @on-metadata="metadata"
-          @on-audioId="audioId"
+        size="default"
+        :url="index == 0 ? url : item"
+        :showCurrentTime="showCurrentTime"
+        :showControls="showControls"
+        :showVolume="showVolume"
+        :showDownload="showDownload"
+        :autoplay="autoplay"
+        :hint="hint"
+        :waitBuffer="waitBuffer"
+        :downloadName="downloadName"
+        @on-change="change"
+        @on-timeupdate="timeupdate"
+        @on-metadata="metadata"
+        @on-audioId="audioId"
       >
       </vue-audio-native>
 
@@ -32,23 +36,18 @@
 </template>
 
 <script>
-import Vue from 'vue';
+import Vue from "vue";
 
 export default {
-
-
-
   props: {
     navigation: {
       type: Object
     }
   },
 
-
   methods: {
     goToTestScreen() {
       this.navigation.navigate("Page");
-
     },
 
     change(event) {
@@ -77,17 +76,15 @@ export default {
     pause(index) {
       document.getElementById(this.currentAudioId[index]).pause();
     }
-
   },
 
   data() {
     return {
       urlArray: [
-        "http://mp3.9ku.com/m4a/183203.m4a",
-        require("../assets/hsym.mp3"),
-        require("../assets/test.mp3")
+        require("../assets/audio/track1.mp3"),
+        require("../assets/audio/track1.mp3")
       ], //演示路径
-      url: require("../assets/test.mp3"),
+      url: require("../assets/audio/track1.mp3"),
       showCurrentTime: true,
       showControls: false,
       showVolume: true,
@@ -98,11 +95,8 @@ export default {
       hint: "音频正在上传中，请稍等…",
       currentAudioId: []
     };
-  },
-
-}
+  }
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
