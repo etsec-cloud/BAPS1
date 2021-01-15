@@ -23,12 +23,13 @@ import paramètrecompte from "./screens/paramètrecompte.vue";
 import notifscreen from "./screens/notifscreen.vue";
 import mesinfoscreen from "./screens/mesinfoscreen.vue";
 import profil from "./screens/Profil.vue";
+import listing from "./screens/listing.vue";
 
 import aproposIcon from "./assets/img/profil.png";
 
 const BottomTabNavigator = createBottomTabNavigator({
-  Register: {
-    screen: register,
+  Connexion: {
+    screen: connexion,
     navigationOptions: {
       title: "",
       tabBarIcon: ({ tintColor, activeTintColor }) => (
@@ -49,8 +50,8 @@ const BottomTabNavigator = createBottomTabNavigator({
       }
     }
   },
-  Connexion: {
-    screen: connexion,
+  Listing: {
+    screen: listing,
     navigationOptions: ({ navigation }) => ({
       title: ``,
       tabBarIcon: ({ tintColor, activeTintColor }) => (
