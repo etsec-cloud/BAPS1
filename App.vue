@@ -24,6 +24,7 @@ import notifscreen from "./screens/notifscreen.vue";
 import mesinfoscreen from "./screens/mesinfoscreen.vue";
 import profil from "./screens/Profil.vue";
 import listing from "./screens/listing.vue";
+import notifications from "./screens/notifications.vue";
 
 import aproposIcon from "./assets/img/profil.png";
 
@@ -95,8 +96,8 @@ const BottomTabNavigator = createBottomTabNavigator({
     }
   },
 
-  Administration: {
-    screen: administration,
+  Notifications: {
+    screen: notifications,
     navigationOptions: ({ navigation }) => ({
       title: ``,
       tabBarIcon: ({ tintColor, activeTintColor }) => (
